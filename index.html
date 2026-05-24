@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>ساعة الحياة السنية · v20</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Amiri+Quran&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}
+
+/* ══════════════ NIGHT — Deep Obsidian + Pearled Gold ══════════════ */
+:root{
+  --bg:#06060d;--bg2:#0b0b16;
+  --card:#0e0e1a;--card2:#13131f;--card3:#181824;
+  --tx:#ebe2cd;--tx2:rgba(235,226,205,.6);--tx3:rgba(235,226,205,.34);--tx4:rgba(235,226,205,.14);--tx5:rgba(235,226,205,.06);
+  --gold:#c9a26a;--gold-warm:#dcb780;--gold-deep:#a8855a;
+  --gold-soft:rgba(201,162,106,.12);--gold-ghost:rgba(201,162,106,.05);--gold-line:rgba(201,162,106,.22);
+  --rose:#b89399;--rose-warm:#caa3a9;--rose-deep:#8d6a70;
+  --rose-soft:rgba(184,147,153,.1);--rose-ghost:rgba(184,147,153,.04);--rose-line:rgba(184,147,153,.2);
+  --rose-pastel:#d4b1b7;
+  --matcha:#9ab186;--matcha-warm:#afc59d;--matcha-deep:#728860;
+  --matcha-soft:rgba(154,177,134,.1);--matcha-ghost:rgba(154,177,134,.04);--matcha-line:rgba(154,177,134,.2);
+  --pp:#a88cc4;--gn:#85aa78;--gn-soft:rgba(133,170,120,.13);--rd:#c46668;--bl:#7aa0c8;
+  --line:rgba(235,226,205,.06);--line2:rgba(235,226,205,.11);--line3:rgba(235,226,205,.2);
+  --panel-inset:inset 0 1px 0 rgba(255,240,200,.04);
+  --ambient:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(201,162,106,.1) 0%,transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(168,140,196,.04) 0%,transparent 70%);
+  --bg-grad:radial-gradient(ellipse at 50% -20%,#141428 0%,#08081a 55%,#05050c 100%);
+  --fd:'Fraunces',serif;--fh:'Cormorant Garamond',serif;--fa:'Noto Naskh Arabic',serif;--fq:'Amiri Quran','Scheherazade New',serif;--fs:'Scheherazade New',serif;--f:'Noto Sans Thai',system-ui,sans-serif;
+  --sg-bfajr:#1c1a34;--sg-fajr:#20304e;--sg-duha:#362e1b;--sg-dhuhr:#2a240c;--sg-asr:#261a04;--sg-maghrib:#271206;--sg-isha:#101028;
+  --clock-bg:#09091a;--clock-ring:rgba(201,162,106,.1);
+  --shadow-soft:0 8px 28px rgba(0,0,0,.4);
+}
+
+/* ══════════════ DAY — Matcha & Cream · Quiet Luxury · Professional ══════════════ */
+body.L{
+  --bg:#f7f2e8;--bg2:#ece2cc;
+  --card:#ffffff;--card2:#f5efe2;--card3:#eadfc8;
+  --tx:#18120a;--tx2:rgba(24,18,10,.66);--tx3:rgba(24,18,10,.4);--tx4:rgba(24,18,10,.14);--tx5:rgba(24,18,10,.05);
+  --gold:#8a6516;--gold-warm:#a07b24;--gold-deep:#5c4308;
+  --gold-soft:rgba(138,101,22,.085);--gold-ghost:rgba(138,101,22,.03);--gold-line:rgba(138,101,22,.2);
+  --rose:#a85062;--rose-warm:#bc6e7f;--rose-deep:#782d40;
+  --rose-soft:rgba(168,80,98,.09);--rose-ghost:rgba(168,80,98,.035);--rose-line:rgba(168,80,98,.22);
+  --rose-pastel:#e0bbc5;
+  --matcha:#6a8a42;--matcha-warm:#85a55c;--matcha-deep:#3c5420;
+  --matcha-soft:rgba(106,138,66,.12);--matcha-ghost:rgba(106,138,66,.04);--matcha-line:rgba(106,138,66,.24);
+  --pp:#664484;--gn:#557737;--gn-soft:rgba(85,119,55,.11);--rd:#a33432;--bl:#386690;
+  --line:rgba(24,18,10,.055);--line2:rgba(24,18,10,.1);--line3:rgba(24,18,10,.2);
+  --panel-inset:none;
+  --ambient:
+    radial-gradient(ellipse 55% 38% at 12% 5%,rgba(165,130,55,.12) 0%,transparent 62%),
+    radial-gradient(ellipse 58% 44% at 92% 96%,rgba(120,155,70,.18) 0%,transparent 65%),
+    radial-gradient(ellipse 38% 28% at 82% 18%,rgba(195,100,118,.07) 0%,transparent 70%),
+    radial-gradient(ellipse 70% 48% at 50% 52%,rgba(242,222,168,.05) 0%,transparent 75%);
+  --bg-grad:linear-gradient(172deg,#faf4e6 0%,#f1e8d2 55%,#e6d9b6 100%);
+  --sg-bfajr:#e4d9ea;--sg-fajr:#f5deb8;--sg-duha:#f3e6c5;--sg-dhuhr:#e8ccae;--sg-asr:#e2b99a;--sg-maghrib:#e3ada6;--sg-isha:#cec2db;
+  --clock-bg:#ffffff;--clock-ring:rgba(138,101,22,.12);
+  --shadow-soft:0 4px 22px rgba(138,101,22,.06),0 2px 10px rgba(106,138,66,.05);
+}
+
+html,body{height:100%;overflow-x:hidden}
+body{background:var(--bg);background-image:var(--bg-grad);background-attachment:fixed;color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.5;transition:background .6s,color .6s;padding-bottom:env(safe-area-inset-bottom);position:relative}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:var(--ambient);transition:opacity .6s}
+::-webkit-scrollbar{width:2px;height:2px}
+::-webkit-scrollbar-thumb{background:var(--gold-line);border-radius:9px}
+
+.app{max-width:440px;margin:0 auto;padding:14px 14px 110px;min-height:100vh;position:relative;z-index:1}
+
+/* Watch-face Header — minimal, clock-feel */
+.wf-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:8px 4px 14px;margin-bottom:8px}
+.wf-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.wf-time{font-family:var(--fd);font-size:38px;font-weight:300;letter-spacing:.5px;color:var(--tx);line-height:.95;font-variant-numeric:tabular-nums}
+.wf-time .wf-sec{font-size:13px;color:var(--tx3);font-weight:400;margin-left:4px;letter-spacing:.5px;vertical-align:2px}
+.wf-meta{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px;margin-top:3px;font-size:10.5px;color:var(--tx2);letter-spacing:.3px;font-weight:400}
+.wf-meta .wf-greg{color:var(--tx)}
+.wf-meta .wf-sep{color:var(--tx4);font-size:9px}
+.wf-meta .wf-hj{font-family:var(--fa);color:var(--gold);font-size:12.5px;font-weight:500;letter-spacing:.2px;cursor:pointer;padding:0 1px;border-radius:3px;transition:background .2s}
+.wf-meta .wf-hj:active{background:var(--gold-soft)}
+.wf-meta .wf-hj-off{font-family:var(--fd);font-size:9px;color:var(--rose-deep);font-weight:600;letter-spacing:.5px;font-style:italic;margin-left:3px}
+.wf-side{flex-shrink:0;display:flex;align-items:flex-start;padding-top:4px}
+
+/* Header */
+.hdr{display:flex;align-items:center;gap:10px;padding:0 2px 7px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.hdr .h-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:0}
+.hdr .h-date{font-family:var(--fd);font-size:10.5px;font-weight:400;color:var(--tx);letter-spacing:.3px;font-feature-settings:'smcp','c2sc'}
+.hdr .h-hj{font-family:var(--fa);font-size:12.5px;color:var(--gold);font-weight:500;line-height:1.2;display:inline-flex;align-items:center;gap:5px}
+.hdr .h-hj .h-hj-txt{cursor:pointer;padding:1px 2px;border-radius:4px;transition:background .2s}
+.hdr .h-hj .h-hj-txt:active{background:var(--gold-soft)}
+.hdr .h-hj-off{font-family:var(--fd);font-size:8.5px;color:var(--rose-deep);font-weight:600;letter-spacing:.5px;font-style:italic;opacity:.85}
+.th-circ{width:30px;height:30px;border-radius:50%;background:var(--card);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;flex-shrink:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;color:var(--gold)}
+body:not(.L) .th-circ{box-shadow:0 0 12px rgba(201,162,106,.12),inset 0 1px 0 rgba(255,240,200,.05)}
+body.L .th-circ{box-shadow:0 2px 8px rgba(184,122,133,.06)}
+.th-circ:active{transform:scale(.88) rotate(-10deg)}
+.th-circ::after{content:attr(data-mode);position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);font-family:var(--fd);font-size:6.5px;letter-spacing:1.4px;color:var(--tx3);text-transform:uppercase;font-weight:500;white-space:nowrap;pointer-events:none}
+
+/* Page header (non-home views) */
+.page-hdr{display:flex;align-items:center;gap:12px;padding:6px 2px 14px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.page-back{width:36px;height:36px;border-radius:50%;background:transparent;border:1px solid var(--line2);color:var(--tx2);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;font-family:var(--fd);font-weight:300;line-height:1;letter-spacing:-2px;padding-right:2px}
+body.L .page-back{box-shadow:0 1px 3px rgba(24,18,10,.04)}
+.page-back:hover{border-color:var(--line3);color:var(--tx)}
+.page-back:active{transform:scale(.88);color:var(--gold);border-color:var(--gold-line)}
+.page-hdr-ttl{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.page-hdr-ar{font-family:var(--fa);font-size:18px;font-weight:600;color:var(--gold);line-height:1.15;letter-spacing:.3px}
+.page-hdr-th{font-family:var(--fd);font-size:10.5px;color:var(--tx2);letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+
+/* Smart alerts */
+.alerts{display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
+.alert{display:flex;align-items:center;gap:10px;padding:7px 12px;border-radius:10px;background:var(--card);border:1px solid var(--gold-line);box-shadow:var(--panel-inset);position:relative;overflow:hidden}
+.alert::before{content:'';position:absolute;inset:0;opacity:.06;background:linear-gradient(90deg,var(--gold) 0%,transparent 70%);pointer-events:none}
+.alert.alert-rose::before{background:linear-gradient(90deg,var(--rose) 0%,transparent 70%)}
+.alert.alert-rose{border-color:var(--rose-line)}
+.alert .a-ic{font-family:var(--fa);font-size:16px;color:var(--gold);flex-shrink:0;width:24px;text-align:center;font-weight:500}
+.alert.alert-rose .a-ic{color:var(--rose-warm)}
+.alert .a-bd{flex:1;min-width:0;position:relative;z-index:1}
+.alert .a-ar{font-family:var(--fa);font-size:12px;color:var(--gold);font-weight:600;line-height:1.2;letter-spacing:.2px}
+.alert.alert-rose .a-ar{color:var(--rose-deep)}
+.alert .a-th{font-size:9.5px;color:var(--tx2);margin-top:1px;letter-spacing:.3px;line-height:1.3}
+.alert .a-tag{font-family:var(--fd);font-size:7.5px;letter-spacing:1.2px;color:var(--tx3);text-transform:uppercase;padding:2px 6px;border:1px solid var(--line2);border-radius:20px;flex-shrink:0;position:relative;z-index:1}
+
+/* Prayer Strip */
+.p-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:10px;transition:background .5s,border-color .5s;box-shadow:var(--panel-inset)}
+body.L .p-strip{box-shadow:0 1px 2px rgba(24,18,10,.025)}
+.p-cell{text-align:center;padding:8px 2px 9px;background:var(--card);position:relative;transition:background .5s}
+.p-cell.cur{background:linear-gradient(180deg,var(--gold-ghost) 0%,var(--card) 70%)}
+.p-cell .pa{font-family:var(--fa);font-size:13px;color:var(--gold);line-height:1.15;font-weight:500;letter-spacing:.1px}
+.p-cell.cur .pa{color:var(--gold);font-weight:600}
+.p-cell .pt{font-family:var(--fd);font-size:11px;font-weight:500;color:var(--tx);margin-top:2px;font-variant-numeric:tabular-nums;letter-spacing:.3px}
+.p-cell .pn{font-size:7.5px;color:var(--tx3);margin-top:1px;letter-spacing:.4px;font-weight:400;text-transform:uppercase}
+.p-cell.cur .pn{color:var(--gold);opacity:.7}
+.p-cell.cur::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:0 0 2px 2px}
+.p-cell.cur::after{content:'';position:absolute;bottom:3px;left:50%;width:3px;height:3px;border-radius:50%;background:var(--gold);transform:translateX(-50%);box-shadow:0 0 4px var(--gold-line);animation:pulse 2s infinite}
+
+/* Countdown hero */
+.cd-hero{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px;margin:0 0 10px;background:var(--card);border:1px solid var(--line);border-radius:11px;box-shadow:var(--panel-inset);transition:all .4s;position:relative;overflow:hidden}
+body:not(.L) .cd-hero{box-shadow:0 0 18px rgba(201,162,106,.04),var(--panel-inset)}
+body.L .cd-hero{box-shadow:0 2px 14px rgba(184,122,133,.05)}
+.cd-hero .cd-lab{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+.cd-hero .cd-eyebrow{font-family:var(--fd);font-size:8px;color:var(--tx3);letter-spacing:1.8px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:5px}
+.cd-hero .cd-eyebrow::before{content:'';width:14px;height:1px;background:var(--gold-line)}
+.cd-hero .cd-name{font-family:var(--fa);font-size:16px;color:var(--gold);font-weight:600;line-height:1.15;letter-spacing:.3px;display:flex;align-items:baseline;gap:6px}
+.cd-hero .cd-th{font-size:10px;color:var(--tx2);font-family:var(--f);font-weight:400;letter-spacing:.3px}
+.cd-hero .cd-clock{text-align:right;flex-shrink:0}
+.cd-hero .cd-big{font-family:var(--fd);font-size:19px;font-weight:500;color:var(--tx);font-variant-numeric:tabular-nums;line-height:1;letter-spacing:.3px}
+.cd-hero .cd-u{font-size:9.5px;color:var(--tx3);font-weight:400;margin-left:1px;letter-spacing:.3px}
+.cd-hero .cd-time-at{font-family:var(--fd);font-size:8.5px;color:var(--tx3);margin-top:2px;letter-spacing:.8px;font-variant-numeric:tabular-nums;text-transform:uppercase;font-weight:500}
+
+/* Night/day strip */
+.n-strip{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;font-family:var(--fd);font-size:10px;color:var(--tx3);letter-spacing:1px;font-weight:500;padding:2px 0}
+.n-pair{display:flex;align-items:center;gap:6px}
+.n-lbl{text-transform:uppercase;font-size:8px;letter-spacing:1.4px}
+.n-val{color:var(--gold);font-weight:600;font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.3px}
+.n-sep{color:var(--tx4);font-size:8px}
+
+/* Clock */
+.clock-box{position:relative;width:100%;max-width:360px;margin:0 auto 10px;aspect-ratio:1/1}
+.clock-box svg{width:100%;height:100%;display:block}
+.now-chip{position:absolute;top:14%;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--line2);padding:2.5px 9px 2.5px 7px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;font-family:var(--fd);font-size:11px;font-weight:500;color:var(--tx2);font-variant-numeric:tabular-nums;letter-spacing:.4px;z-index:3}
+.now-dot{width:5px;height:5px;border-radius:50%;background:var(--matcha);animation:pulse 2s infinite}
+.now-seg-lbl{position:absolute;top:26%;left:50%;transform:translateX(-50%);font-family:var(--fa);font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.3px;text-align:center;z-index:2;opacity:.7}
+.clock-cap{text-align:center;margin-top:-6px;font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:3px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px}
+.c-pct{font-family:var(--fd);font-size:14px;color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.5px;text-transform:none}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Segment Pills */
+.seg-row{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:12px}
+.s-pill{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px 5px;background:var(--card);border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:all .25s;position:relative;color:var(--tx2);overflow:hidden}
+.s-pill:active{transform:scale(.95)}
+.s-pill.cur{background:var(--gold-soft);border-color:var(--gold-line);color:var(--tx)}
+.s-pill.sel{background:var(--card2);border-color:var(--gold);color:var(--tx);box-shadow:0 0 14px rgba(201,162,106,.18)}
+body.L .s-pill.sel{box-shadow:0 0 14px rgba(138,101,36,.2)}
+.s-pill.past{opacity:.4}
+.s-pill .s-sym{font-family:var(--fa);font-size:13px;color:var(--gold);line-height:1;font-weight:500}
+.s-pill .s-lbl{font-size:8.5px;letter-spacing:.2px;line-height:1.1;font-weight:400}
+.s-pill .s-prog{display:block;width:100%;height:2px;background:var(--line2);border-radius:2px;overflow:hidden;margin-top:2px}
+.s-pill .s-prog-f{display:block;height:100%;background:var(--gold);border-radius:2px;transition:width .4s}
+.s-pill.cur .s-prog-f,.s-pill.sel .s-prog-f{background:linear-gradient(90deg,var(--gold),var(--gold-warm))}
+
+/* Panel */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin-bottom:14px;box-shadow:var(--panel-inset);transition:all .4s;position:relative;overflow:hidden}
+body:not(.L) .panel{box-shadow:0 0 26px rgba(201,162,106,.03),var(--panel-inset)}
+body.L .panel{box-shadow:0 3px 20px rgba(184,122,133,.05),0 1px 8px rgba(166,120,32,.04)}
+.p-hd{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.p-mark{width:3px;height:30px;border-radius:2px;flex-shrink:0;opacity:.85}
+.p-inf{flex:1;min-width:0}
+.p-ar{font-family:var(--fa);font-size:19px;font-weight:600;letter-spacing:.3px;line-height:1.15}
+.p-sub{display:flex;align-items:center;gap:5px;margin-top:2px;font-size:10px;color:var(--tx2);font-weight:500}
+.p-sub .th{color:var(--tx);font-weight:500}
+.p-sub .sep{color:var(--tx4);font-size:8px}
+.p-ring{position:relative;width:38px;height:38px;flex-shrink:0}
+.p-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.p-ring .rt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:10px;font-weight:600;color:var(--tx);font-variant-numeric:tabular-nums}
+.p-back{width:28px;height:28px;border-radius:50%;background:transparent;border:1px solid var(--line2);color:var(--tx2);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.p-back:active{transform:scale(.9);color:var(--gold)}
+.cur-act-row{display:flex;align-items:center;gap:8px;padding:6px 10px;margin-bottom:6px;background:var(--card2);border-radius:8px;font-size:11px}
+.ca-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ca-n{flex:1;color:var(--tx)}
+.ca-t{font-family:var(--fd);font-size:9.5px;color:var(--tx3);letter-spacing:.4px;font-variant-numeric:tabular-nums}
+
+/* Panel tabs */
+.p-tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:3px;background:var(--card2);border-radius:10px;margin:10px 0 12px;border:1px solid var(--line)}
+.p-tab{padding:8px 6px;background:transparent;border:none;cursor:pointer;font-family:var(--f);font-size:11px;font-weight:500;color:var(--tx2);border-radius:8px;letter-spacing:.3px;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:6px}
+.p-tab.on{background:var(--card);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.08),inset 0 0 0 1px var(--gold-line)}
+.p-tab .tc{font-family:var(--fd);font-size:9.5px;color:var(--tx3);font-variant-numeric:tabular-nums;letter-spacing:.5px;font-weight:500}
+.p-tab.on .tc{color:var(--gold)}
+.p-tab:active{transform:scale(.97)}
+
+.sec-lbl{display:flex;align-items:center;justify-content:space-between;margin:0 0 8px;font-family:var(--fd);font-size:9.5px;color:var(--tx3);letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.sec-stat{font-family:var(--fd);font-size:10px;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.5px;font-weight:600;text-transform:none}
+
+/* Sunnah list */
+.sun-list{display:flex;flex-direction:column;gap:4px}
+.sun-item{display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--card2);border-radius:9px;cursor:pointer;transition:background .3s,opacity .3s,transform .2s;position:relative;border:1px solid transparent}
+.sun-item:active{transform:scale(.99)}
+.sun-item.done{opacity:.48}
+.sun-item.done .s-tx{text-decoration:line-through;text-decoration-color:var(--tx3);text-decoration-thickness:.5px}
+.s-ck{width:15px;height:15px;border-radius:50%;border:1.3px solid var(--line3);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;transition:all .3s}
+.sun-item.done .s-ck{background:var(--matcha);border-color:var(--matcha);color:#fff}
+.s-bd{flex:1;min-width:0}
+.s-tx{font-size:11.5px;color:var(--tx);line-height:1.4;font-weight:400;display:flex;align-items:center;flex-wrap:wrap;gap:5px;letter-spacing:.1px}
+.s-tag{font-family:var(--fa);font-size:9.5px;color:var(--gold);background:var(--gold-soft);padding:1px 6px;border-radius:7px;font-weight:500;letter-spacing:.2px}
+.s-h-tg{font-family:var(--fd);font-size:9px;color:var(--tx3);margin-top:3px;cursor:pointer;letter-spacing:.3px;font-style:italic;transition:color .2s}
+.s-h-tg:hover{color:var(--gold)}
+.s-mn{width:20px;height:20px;border-radius:50%;background:transparent;border:none;cursor:pointer;color:var(--tx3);font-size:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;opacity:.5;transition:all .2s;padding:0}
+.s-mn:hover,.s-mn.on{opacity:1;color:var(--gold);background:var(--gold-ghost)}
+.s-mn:active{transform:scale(.85)}
+
+/* Inline action row */
+.s-actions{display:flex;gap:4px;padding:7px 8px;margin-top:-2px;margin-bottom:2px;background:var(--card3);border-radius:8px}
+.s-act-btn{flex:1;padding:7px;background:var(--card);border:1px solid var(--line2);border-radius:7px;cursor:pointer;font-family:var(--f);font-size:10.5px;color:var(--tx);letter-spacing:.3px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;font-weight:500}
+.s-act-btn:active{transform:scale(.96)}
+.s-act-btn.del{color:var(--rd)}
+.s-act-btn.del:hover{background:rgba(196,102,104,.08)}
+.s-act-btn .sa-ic{font-family:var(--fa);font-size:11px;opacity:.9}
+
+/* Inline edit form */
+.s-edit{padding:10px;margin-top:-2px;margin-bottom:4px;background:var(--card3);border-radius:10px;display:flex;flex-direction:column;gap:6px}
+.s-edit input,.s-edit select,.s-edit textarea{width:100%;padding:8px 10px;background:var(--card);border:1px solid var(--line2);border-radius:7px;font-family:var(--f);font-size:12px;color:var(--tx);outline:none;transition:border-color .2s}
+.s-edit input.ar-in{font-family:var(--fa);font-size:16px;text-align:right;direction:rtl;line-height:1.6}
+.s-edit input:focus,.s-edit select:focus,.s-edit textarea:focus{border-color:var(--gold)}
+.s-edit-row{display:flex;gap:5px}
+.s-edit-row .s-act-btn{flex:1}
+.s-edit-row .s-act-btn.save{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* Dua block */
+.dua-blk{padding:14px 16px 12px;margin-bottom:8px;background:var(--card2);border-radius:12px;position:relative;border:1px solid var(--line)}
+.dua-blk::before{content:'❖';position:absolute;top:12px;right:14px;color:var(--gold);font-size:11px;opacity:.42;font-family:var(--fa)}
+.dua-ar{font-family:var(--fq);font-size:20px;font-weight:400;color:var(--tx);line-height:2.05;text-align:right;direction:rtl;letter-spacing:0;margin-bottom:10px;padding-right:22px;padding-left:4px;word-spacing:1px}
+.dua-tl{font-family:var(--fh);font-size:11.5px;font-style:italic;color:var(--gold);margin-bottom:3px;letter-spacing:.3px;line-height:1.4}
+.dua-mn{font-size:11.5px;color:var(--tx2);line-height:1.55}
+.dua-empty{text-align:center;padding:20px;color:var(--tx3);font-size:12px;font-style:italic}
+.dua-check{display:flex;align-items:center;gap:7px;margin-top:10px;padding:7px 12px;background:var(--card);border:1px solid var(--line2);border-radius:8px;cursor:pointer;font-size:11px;color:var(--tx2);font-weight:500;letter-spacing:.3px;transition:all .25s;width:fit-content}
+.dua-check.done{background:var(--matcha-soft);border-color:var(--matcha);color:var(--matcha-deep)}
+.dua-check.done .dc-ic{background:var(--matcha);color:#fff;border-color:var(--matcha)}
+.dua-check:active{transform:scale(.98)}
+.dua-check .dc-ic{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line3);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.dua-nav{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;padding-top:8px;border-top:1px solid var(--line)}
+.nav-arr{width:26px;height:26px;border-radius:50%;background:var(--card);border:1px solid var(--line2);color:var(--tx2);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.nav-arr:active{transform:scale(.88)}
+.nav-dot{width:5px;height:5px;border-radius:50%;background:var(--line3);cursor:pointer;transition:all .2s}
+.nav-dot.on{background:var(--gold);transform:scale(1.6)}
+.dua-tools{position:absolute;top:10px;left:10px;display:flex;gap:3px;z-index:2}
+.dua-tools .s-mn{width:24px;height:24px;font-size:12px}
+
+.empty{text-align:center;padding:32px 20px;color:var(--tx3);font-size:12px;line-height:1.6;font-style:normal;border:1px dashed var(--line2);border-radius:12px;margin-bottom:10px;background:var(--tx5);font-family:var(--f);letter-spacing:.3px}
+.empty b{color:var(--tx2);font-family:var(--fd);font-weight:500;font-size:13px;display:block;margin-bottom:4px;letter-spacing:.5px}
+
+/* Focus Now bar */
+.focus-now{display:flex;align-items:center;gap:8px;padding:6px 11px;margin:6px 0 10px;background:var(--gold-ghost);border:1px solid var(--gold-line);border-radius:22px;font-size:10.5px;color:var(--tx)}
+.focus-now.focus-done{background:var(--matcha-ghost);border-color:var(--matcha-line)}
+.fn-ic{font-family:var(--fa);font-size:12px;color:var(--gold);flex-shrink:0}
+.focus-now.focus-done .fn-ic{color:var(--matcha-deep)}
+.fn-tx{flex:1;color:var(--tx);font-weight:500;line-height:1.3;letter-spacing:.1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fn-pct{font-family:var(--fd);font-size:11px;color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.3px;flex-shrink:0}
+.focus-now.focus-done .fn-pct{color:var(--matcha-deep)}
+
+/* Dock — fixed bottom tab bar */
+.dock{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);width:calc(100% - 20px);max-width:440px;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;padding:5px;background:var(--card);border:1px solid var(--line2);border-radius:16px;z-index:40;box-shadow:0 6px 26px rgba(0,0,0,.18)}
+body.L .dock{box-shadow:0 4px 18px rgba(184,122,133,.14),0 2px 8px rgba(166,120,32,.06)}
+.d-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px 6px;background:transparent;border:none;cursor:pointer;color:var(--tx2);font-family:var(--f);font-size:9.5px;font-weight:500;letter-spacing:.3px;transition:all .25s;border-radius:11px}
+.d-btn:active{transform:scale(.94)}
+.d-btn.on{background:var(--gold-soft);color:var(--gold)}
+.d-btn .d-ic{font-size:17px;line-height:1;color:var(--gold);font-family:var(--fa);font-weight:400;opacity:.85}
+.d-btn.on .d-ic{opacity:1}
+
+/* FAB */
+.fab{position:fixed;right:18px;bottom:82px;z-index:50;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold-warm),var(--gold-deep));border:none;cursor:pointer;color:#fff;font-size:26px;font-weight:300;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3),0 0 0 1px var(--gold-line);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+body.L .fab{box-shadow:0 6px 20px rgba(138,101,36,.3),0 2px 8px rgba(184,122,133,.2),0 0 0 1px var(--gold-line)}
+.fab:active{transform:scale(.92)}
+.fab.on{transform:rotate(135deg)}
+.fab-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:48;backdrop-filter:blur(6px);animation:fade .25s both}
+body.L .fab-bg{background:rgba(60,45,20,.32)}
+.fab-sheet{position:fixed;right:18px;bottom:146px;z-index:49;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fab-item{display:flex;align-items:center;gap:10px;padding:11px 16px 11px 14px;background:var(--card);border:1px solid var(--line2);border-radius:28px;cursor:pointer;color:var(--tx);font-size:12.5px;font-weight:500;letter-spacing:.3px;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:all .2s}
+body.L .fab-item{box-shadow:0 4px 14px rgba(138,101,36,.15),0 2px 8px rgba(184,122,133,.1)}
+.fab-item:active{transform:scale(.96)}
+.fab-item .fi-ic{width:32px;height:32px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--fa);font-size:15px;font-weight:500;flex-shrink:0}
+
+/* ═══════════════ PAGE: BRIEF — Minimal Typography ═══════════════ */
+.br-hero{padding:6px 0 22px;margin-bottom:6px}
+.br-eyebrow{font-family:var(--fd);font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:var(--tx3);font-weight:500;margin-bottom:14px}
+.br-main{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.br-big{font-family:var(--fd);font-size:64px;font-weight:200;color:var(--tx);font-variant-numeric:tabular-nums;line-height:.85;letter-spacing:-1.5px}
+.br-big-u{font-size:16px;color:var(--tx3);opacity:.75;font-weight:300;letter-spacing:0}
+.br-desc{font-size:11.5px;color:var(--tx2);line-height:1.5;flex:1;padding-top:8px;padding-left:4px;font-weight:400}
+.br-desc b{color:var(--tx);font-weight:600;font-family:var(--fd)}
+.br-prog{width:100%;height:1px;background:var(--line2);overflow:hidden;margin-bottom:10px}
+.br-prog-f{height:100%;background:var(--tx);transition:width .5s}
+.br-meta{display:flex;gap:18px;font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:1.6px;text-transform:uppercase;font-weight:500}
+.br-meta span b{color:var(--tx);font-weight:600;font-size:11px;margin-right:4px;font-variant-numeric:tabular-nums}
+
+.br-sec{margin-bottom:24px}
+.br-sec-hd{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.br-sec-ttl{font-family:var(--fd);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--tx2);font-weight:500;display:flex;align-items:center;gap:8px}
+.br-sec-ic{font-family:var(--fa);color:var(--gold);font-size:11px;width:14px;text-align:center;font-weight:500;opacity:.8}
+.br-sec-ct{font-family:var(--fd);font-size:10px;color:var(--tx3);font-variant-numeric:tabular-nums;font-weight:500;letter-spacing:.4px}
+.br-sec-ct.mat{color:var(--matcha-deep)}
+.br-sec-ct.rose{color:var(--rose-deep)}
+
+.br-list{display:flex;flex-direction:column}
+.br-row{display:flex;align-items:center;gap:11px;padding:9px 2px;font-size:12px;color:var(--tx);cursor:pointer;transition:opacity .2s;border-bottom:1px solid var(--line)}
+.br-row:last-child{border-bottom:none}
+.br-row:active{opacity:.6}
+.br-row.done{opacity:.42}
+.br-row.done .br-row-tx{color:var(--tx2);text-decoration:line-through;text-decoration-color:var(--tx4);text-decoration-thickness:.5px}
+.br-row-ck{width:11px;height:11px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700}
+.br-row.done .br-row-ck{background:var(--matcha);color:#fff}
+.br-row:not(.done) .br-row-ck{border:1.2px solid var(--line3)}
+.br-row-seg{font-family:var(--fa);font-size:12px;color:var(--gold);width:14px;text-align:center;flex-shrink:0;opacity:.85}
+.br-row-tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400;letter-spacing:.1px}
+.br-row-tag{font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:.5px;flex-shrink:0;font-weight:500;text-transform:lowercase}
+.br-row-tag.hot{color:var(--rose-deep);font-weight:600}
+
+.br-tmr{padding:2px 0;margin-bottom:14px}
+.br-tmr-row{display:flex;align-items:center;gap:12px;padding:8px 2px;border-bottom:1px solid var(--line)}
+.br-tmr-row:last-child{border-bottom:none}
+.br-tmr-ic{font-family:var(--fa);color:var(--gold);font-size:14px;width:16px;text-align:center;flex-shrink:0;opacity:.8}
+.br-tmr-bd{flex:1;min-width:0}
+.br-tmr-ar{font-family:var(--fa);font-size:13px;color:var(--gold);font-weight:500;line-height:1.2}
+.br-tmr-th{font-size:11px;color:var(--tx);margin-top:2px;line-height:1.35;font-weight:400}
+.br-tmr-time{font-family:var(--fd);font-size:10px;color:var(--tx3);font-variant-numeric:tabular-nums;letter-spacing:.5px;text-transform:uppercase;font-weight:500}
+.br-empty{padding:16px 2px;color:var(--tx3);font-size:11.5px;font-style:italic;text-align:left}
+
+/* ═══════════════ PAGE: ACTIVITIES · Quiet Luxury ═══════════════ */
+.act-card{display:flex;align-items:center;gap:13px;padding:14px 16px;margin-bottom:8px;background:var(--card);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow-soft);transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.act-card:active{transform:scale(.995)}
+.act-card::before{content:'';position:absolute;left:0;top:12%;bottom:12%;width:2.5px;border-radius:0 2px 2px 0;background:var(--ac-color,var(--gold));opacity:.7}
+.ac-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-left:4px;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--line2)}
+.ac-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.ac-n{font-size:13.5px;color:var(--tx);font-weight:500;letter-spacing:.2px;line-height:1.2}
+.ac-t{font-family:var(--fd);font-size:10.5px;color:var(--tx3);letter-spacing:.6px;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:6px;font-weight:400}
+.ac-d{color:var(--matcha-deep);font-weight:600;letter-spacing:.3px}
+.ac-actions{display:flex;gap:2px;flex-shrink:0}
+.ac-mn{width:30px;height:30px;border-radius:50%;background:transparent;border:none;cursor:pointer;color:var(--tx3);font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:var(--fa)}
+.ac-mn:hover{color:var(--tx);background:var(--tx5)}
+.ac-mn:active{transform:scale(.85);color:var(--gold)}
+
+.act-form{padding:14px;margin-top:8px;background:var(--card2);border:1px solid var(--line);border-radius:13px;display:flex;flex-direction:column;gap:9px}
+.act-form input{padding:10px 13px;background:var(--card);border:1px solid var(--line2);border-radius:9px;color:var(--tx);font-size:12.5px;font-family:var(--f);outline:none;transition:border-color .2s}
+.act-form input:focus{border-color:var(--gold)}
+.col-row{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.col-chip{width:22px;height:22px;border-radius:50%;cursor:pointer;transition:all .2s;border:1px solid rgba(255,255,255,.15)}
+body.L .col-chip{border:1px solid rgba(0,0,0,.08)}
+.col-chip.sel{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--gold);transform:scale(1.08)}
+.act-btn{padding:8px 14px;background:var(--gold);border:none;border-radius:8px;color:#fff;cursor:pointer;font-family:var(--f);font-size:11.5px;font-weight:500;letter-spacing:.3px;transition:all .2s}
+.act-btn.x{background:transparent;color:var(--tx2);border:1px solid var(--line2)}
+.act-btn:active{transform:scale(.95)}
+.add-trig{width:100%;padding:13px;background:transparent;border:1px dashed var(--line2);border-radius:12px;color:var(--tx2);cursor:pointer;font-family:var(--f);font-size:12px;letter-spacing:.3px;font-weight:500;transition:all .25s;margin-top:10px}
+.add-trig:hover,.add-trig:active{border-color:var(--gold);color:var(--gold);background:var(--gold-ghost)}
+
+/* ═══════════════ PAGE: SETTINGS ═══════════════ */
+.settings-sec{margin-bottom:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:all .3s}
+.settings-sec-hd{display:flex;align-items:center;gap:10px;padding:11px 13px;cursor:pointer;user-select:none;transition:background .2s}
+.settings-sec-hd:active{background:var(--card2)}
+.settings-sec.open .settings-sec-hd{border-bottom:1px solid var(--line)}
+.settings-sec-ic{font-family:var(--fa);font-size:15px;color:var(--gold);width:22px;text-align:center}
+.settings-sec-ttl{flex:1;display:flex;flex-direction:column;gap:1px}
+.settings-sec-ar{font-family:var(--fa);font-size:13px;color:var(--gold);font-weight:600;line-height:1.1}
+.settings-sec-th{font-size:10.5px;color:var(--tx);font-weight:500;letter-spacing:.2px}
+.settings-sec-arrow{font-family:var(--fd);font-size:12px;color:var(--tx3);transition:transform .25s;line-height:1}
+.settings-sec.open .settings-sec-arrow{transform:rotate(180deg);color:var(--gold)}
+.settings-sec-body{padding:0 13px;display:block;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .25s ease,padding .3s ease}
+.settings-sec.open .settings-sec-body{padding:11px 13px 13px;max-height:5000px;opacity:1}
+.settings-sec.open .settings-sec-body .sub-seg{overflow:visible}
+
+.th-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.th-opt{padding:10px 4px;background:var(--card2);border:1px solid var(--line);border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all .25s;color:var(--tx2);font-family:var(--f);font-size:10.5px;font-weight:500;letter-spacing:.3px}
+.th-opt.on{background:var(--gold-soft);border-color:var(--gold-line);color:var(--gold)}
+.th-opt .th-ic{font-size:17px;color:var(--gold)}
+
+/* Hijri adjuster */
+.hj-adj{padding:2px 0}
+.hj-adj-disp{display:flex;align-items:baseline;gap:7px;padding:10px 12px;background:var(--card2);border:1px solid var(--line);border-radius:9px;margin-bottom:8px}
+.hj-adj-disp .hj-calc-lbl{font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.hj-adj-disp .hj-calc-val{flex:1;font-family:var(--fa);font-size:14px;color:var(--gold);font-weight:600;line-height:1.15}
+.hj-adj-ctrl{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-bottom:8px}
+.hj-adj-lbl{flex:1;font-size:11px;color:var(--tx);font-weight:500}
+.hj-adj-btn{width:32px;height:32px;border-radius:50%;background:var(--card);border:1px solid var(--line2);color:var(--gold);cursor:pointer;font-family:var(--fd);font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1}
+.hj-adj-btn:active{transform:scale(.9)}
+.hj-adj-val{font-family:var(--fd);font-size:14px;color:var(--tx);font-weight:600;font-variant-numeric:tabular-nums;min-width:30px;text-align:center;letter-spacing:.3px}
+.hj-adj-val.active{color:var(--rose-deep)}
+.hj-adj-reset{width:100%;padding:8px;background:transparent;border:1px solid var(--line2);border-radius:8px;color:var(--tx2);cursor:pointer;font-family:var(--f);font-size:10.5px;font-weight:500;letter-spacing:.3px;transition:all .2s;margin-bottom:6px}
+.hj-adj-reset:hover,.hj-adj-reset:active{border-color:var(--rose);color:var(--rose-deep);background:var(--rose-ghost)}
+.hj-note{font-size:10.5px;color:var(--tx3);line-height:1.55;padding:7px 10px;background:var(--rose-ghost);border-left:2px solid var(--rose-line);border-radius:4px;font-style:italic}
+
+/* Sub-activity editor in settings */
+.sub-seg{margin-bottom:8px;padding:10px 12px;background:var(--card2);border:1px solid var(--line);border-radius:10px}
+.sub-seg-hd{display:flex;align-items:center;gap:6px;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.sub-seg-sym{font-family:var(--fa);color:var(--gold);font-size:13px}
+.sub-seg-n{flex:1;font-size:11.5px;color:var(--tx);font-weight:500;letter-spacing:.2px}
+.sub-seg-ct{font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:.8px;text-transform:uppercase;font-weight:500}
+.sub-list{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.sub-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 8px 4px 9px;background:var(--card);border:1px solid var(--line2);border-radius:16px;font-size:10.5px;color:var(--tx);cursor:pointer;transition:all .2s}
+.sub-chip:active{transform:scale(.97)}
+.sub-chip.editing{border-color:var(--gold);background:var(--gold-ghost)}
+.sub-chip-ic{font-family:var(--fa);color:var(--gold);font-size:11px}
+.sub-chip-x{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:13px;margin-left:1px;padding:0;line-height:1;width:14px;height:14px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .2s}
+.sub-chip-x:hover{color:var(--rd);background:rgba(196,102,104,.1)}
+.sub-empty-s{color:var(--tx3);font-size:10px;font-style:italic;margin-bottom:7px}
+.sub-add-row{display:flex;gap:5px;align-items:center;padding:7px 9px;background:var(--card);border:1px dashed var(--line2);border-radius:8px}
+.sub-add-row input{padding:7px 9px;background:var(--card2);border:1px solid var(--line2);border-radius:6px;font-size:11px;color:var(--tx);font-family:var(--f);outline:none;transition:border-color .2s}
+.sub-add-row input:focus{border-color:var(--gold)}
+.sub-add-row input.ic-in{width:40px;text-align:center;font-family:var(--fa);font-size:13px}
+.sub-add-row input.n-in{flex:1}
+.sub-add-btn{padding:7px 11px;border-radius:7px;border:none;cursor:pointer;font-family:var(--f);font-size:11px;font-weight:500;letter-spacing:.3px;transition:all .2s}
+.sub-add-btn.save{background:var(--gold);color:#fff}
+.sub-add-btn.cancel{background:transparent;color:var(--tx2);border:1px solid var(--line2)}
+.sub-add-btn:active{transform:scale(.95)}
+.sub-add-trig{width:100%;padding:8px;background:transparent;border:1px dashed var(--line2);border-radius:7px;color:var(--tx2);cursor:pointer;font-family:var(--f);font-size:10.5px;letter-spacing:.3px;font-weight:500;transition:all .2s}
+.sub-add-trig:hover,.sub-add-trig:active{border-color:var(--gold);color:var(--gold);background:var(--gold-ghost)}
+
+.dt-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.dt-btn{padding:12px 4px 10px;background:var(--card2);border:1px solid var(--line);border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--tx2);font-family:var(--f);font-size:10px;font-weight:500;letter-spacing:.4px;transition:all .25s}
+.dt-btn:active{transform:scale(.96);color:var(--gold);border-color:var(--gold-line)}
+.dt-btn .dt-ic{font-family:var(--fa);font-size:16px;color:var(--gold);font-weight:500}
+.dt-info{padding:10px 12px;background:var(--card2);border-radius:9px;font-size:10.5px;color:var(--tx2);line-height:1.7;letter-spacing:.2px}
+.dt-info b{color:var(--tx);font-family:var(--fd);font-weight:500}
+
+/* ═══════════════ PAGE: STATS — Quiet Luxury · Premium Typography ═══════════════ */
+.st-hero{display:flex;flex-direction:column;gap:4px;margin-bottom:20px;padding:6px 0 6px}
+.st-hero-main{display:flex;align-items:baseline;gap:12px}
+.st-hero-big{font-family:var(--fd);font-size:64px;font-weight:200;color:var(--tx);font-variant-numeric:tabular-nums;line-height:.85;letter-spacing:-1.5px}
+.st-hero-u{font-size:18px;color:var(--tx3);font-weight:300;letter-spacing:0}
+.st-hero-lbl{font-family:var(--fd);font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:var(--tx3);font-weight:500;margin-bottom:10px}
+.st-hero-sub{margin-top:3px;font-size:11px;color:var(--tx2);line-height:1.4;letter-spacing:.2px}
+.st-hero-sub b{color:var(--tx);font-weight:600;font-family:var(--fd)}
+.st-hero-line{width:100%;height:1px;background:var(--line2);margin-top:16px}
+.st-inline-row{display:flex;align-items:baseline;gap:18px;margin-top:12px;padding-bottom:2px;font-family:var(--fd);font-size:9.5px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.st-inline-row span b{color:var(--tx);font-weight:600;font-size:12px;margin-right:4px;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+
+/* Compact summary row — elegant 4-cell stats strip after calendar/week-list */
+.st-summary{margin:14px 0 18px;padding:14px 4px 4px;border-top:1px solid var(--line)}
+.st-sum-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.st-sum-cell{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 2px;position:relative}
+.st-sum-cell:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:var(--line)}
+.st-sum-v{font-family:var(--fd);font-size:22px;font-weight:300;color:var(--tx);font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.3px}
+.st-sum-u{font-size:11px;color:var(--tx3);font-weight:300;margin-left:1px;letter-spacing:0}
+.st-sum-l{font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.4px;text-transform:uppercase;font-weight:500;text-align:center;line-height:1.2}
+.st-sum-sub{margin-top:14px;text-align:center;font-size:10.5px;color:var(--tx2);letter-spacing:.3px;font-weight:400}
+.st-sum-sub b{color:var(--tx);font-family:var(--fd);font-weight:600;font-variant-numeric:tabular-nums}
+
+.period-tog{display:flex;gap:2px;padding:0;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.period-btn{padding:9px 0;background:transparent;border:none;cursor:pointer;font-family:var(--fd);font-size:10px;color:var(--tx3);letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:all .2s;flex:1;position:relative}
+.period-btn.on{color:var(--tx)}
+.period-btn.on::after{content:'';position:absolute;bottom:-1px;left:15%;right:15%;height:1.5px;background:var(--tx)}
+
+.seg-filter{display:flex;gap:5px;margin-bottom:18px;overflow-x:auto;padding:3px 0 6px;-ms-overflow-style:none;scrollbar-width:none}
+.seg-filter::-webkit-scrollbar{display:none}
+.sf-pill{flex-shrink:0;padding:5px 11px;background:transparent;border:1px solid var(--line2);border-radius:18px;cursor:pointer;font-family:var(--f);font-size:10.5px;color:var(--tx2);letter-spacing:.2px;transition:all .2s;display:flex;align-items:center;gap:5px;font-weight:400}
+.sf-pill.on{background:var(--tx);border-color:var(--tx);color:var(--bg)}
+.sf-pill.on .sf-sym{color:var(--bg);opacity:.85}
+.sf-pill .sf-sym{font-family:var(--fa);font-size:11px;font-weight:500;color:var(--gold);opacity:.75}
+
+/* Minimal collapsible section in stats — no card/borders */
+.st-sec{margin-bottom:18px}
+.st-sec-hd{display:flex;align-items:baseline;gap:10px;padding:9px 2px;cursor:pointer;user-select:none;transition:opacity .2s;border-bottom:1px solid var(--line)}
+.st-sec-hd:active{opacity:.6}
+.st-sec-ic{font-family:var(--fa);font-size:11px;color:var(--gold);width:14px;text-align:center;opacity:.8}
+.st-sec-ttl{flex:1;font-family:var(--fd);font-size:10px;color:var(--tx);letter-spacing:2.4px;text-transform:uppercase;font-weight:500}
+.st-sec-ct{font-family:var(--fd);font-size:10px;color:var(--tx3);font-variant-numeric:tabular-nums;letter-spacing:.4px;font-weight:500}
+.st-sec-arr{font-family:var(--fd);font-size:10px;color:var(--tx3);transition:transform .25s;line-height:1}
+.st-sec.open .st-sec-arr{transform:rotate(180deg);color:var(--tx)}
+.st-sec-bd{padding:0;display:block;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .25s ease,padding .3s ease}
+.st-sec.open .st-sec-bd{padding:10px 0 8px;max-height:4000px;opacity:1}
+
+/* Calendar — premium spacing, subtle lines */
+.cal-wrap{padding:4px 0 10px;background:transparent;border:none;margin-bottom:4px}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;padding:0 4px 14px;margin-bottom:6px}
+.cal-nav-btn{width:32px;height:32px;border-radius:50%;background:transparent;border:1px solid var(--line2);color:var(--tx2);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:var(--fd);font-weight:400;line-height:1}
+.cal-nav-btn:active{transform:scale(.88);color:var(--tx);border-color:var(--line3)}
+.cal-nav-btn[disabled]{opacity:.25;cursor:not-allowed;pointer-events:none}
+.cal-title{font-family:var(--fd);font-size:14px;color:var(--tx);font-weight:400;letter-spacing:.6px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.cal-title .ct-hj{font-family:var(--fa);font-size:11px;color:var(--gold);font-weight:500;opacity:.88;letter-spacing:.3px}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;padding:0 2px}
+.cal-dow-lbl{text-align:center;font-family:var(--fd);font-size:8px;color:var(--tx3);letter-spacing:1.4px;text-transform:uppercase;font-weight:500;padding:3px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:0 2px}
+.cal-cell{aspect-ratio:1/1;border-radius:8px;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:12px;color:var(--tx);font-weight:400;transition:all .25s;font-variant-numeric:tabular-nums;border:1px solid transparent}
+.cal-cell.out{color:var(--tx4);pointer-events:none;opacity:.3}
+.cal-cell.today{border-color:var(--tx);box-shadow:0 0 0 1px var(--tx5)}
+.cal-cell.today .cc-n{font-weight:600}
+.cal-cell.sel{border-color:var(--tx);background:var(--tx5)}
+.cal-cell .cc-n{position:relative;z-index:2}
+.cal-cell::before{content:'';position:absolute;inset:2px;border-radius:6px;background:var(--pct-bg,transparent);opacity:var(--pct-op,0);transition:opacity .3s}
+.cal-cell:active{transform:scale(.92)}
+.cal-cell .cc-nt{position:absolute;bottom:2px;right:3px;width:4px;height:4px;border-radius:50%;background:var(--bl);z-index:2;box-shadow:0 0 0 1px var(--bg)}
+.cal-cell .cc-fast{position:absolute;top:2px;left:3px;font-family:var(--fa);font-size:7px;color:var(--gold);opacity:.8;line-height:1;z-index:2;font-weight:600;letter-spacing:-.5px}
+.cal-cell .cc-fast.white{color:var(--pp)}
+
+/* Calendar legend — quiet, underneath grid */
+.cal-legend{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;padding:10px 2px 2px;font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.2px;text-transform:uppercase;font-weight:500}
+.cal-legend .cl-scale{display:inline-flex;align-items:center;gap:4px}
+.cal-legend .cl-lab{font-size:8px;letter-spacing:1.4px;color:var(--tx3)}
+.cal-legend .cl-sw{width:8px;height:8px;border-radius:2px;display:inline-block}
+.cal-legend .cl-sep{color:var(--tx4);font-size:8px}
+.cal-legend .cl-item{display:inline-flex;align-items:center;gap:4px}
+.cal-legend .cl-ic{font-family:var(--fa);font-size:9.5px;font-weight:600;letter-spacing:-.2px}
+
+/* Day detail card */
+.cal-detail{padding:14px;margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-soft)}
+.cd-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);gap:8px}
+.cd-hd-main{flex:1;min-width:0}
+.cd-day-nav{width:30px;height:30px;border-radius:50%;background:transparent;border:1px solid var(--line2);color:var(--tx2);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;font-family:var(--fd);font-weight:400;line-height:1}
+.cd-day-nav:not([disabled]):active{transform:scale(.88);color:var(--gold);border-color:var(--gold-line)}
+.cd-day-nav[disabled]{opacity:.3;cursor:not-allowed}
+.cd-date{font-family:var(--fd);font-size:14px;color:var(--tx);font-weight:500;letter-spacing:.3px}
+.cd-date-hj{font-family:var(--fa);font-size:11px;color:var(--gold);margin-top:1px;letter-spacing:.2px}
+.cd-mini-st{display:flex;gap:10px}
+.cd-mini{text-align:right}
+.cd-mini-v{font-family:var(--fd);font-size:15px;color:var(--tx);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+.cd-mini-l{font-size:8px;color:var(--tx3);letter-spacing:1px;text-transform:uppercase;font-weight:500}
+.cd-note-lbl{font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.cd-note{width:100%;min-height:62px;padding:10px 12px;background:var(--card2);border:1px solid var(--line2);border-radius:9px;color:var(--tx);font-family:var(--f);font-size:12px;outline:none;resize:vertical;line-height:1.55;transition:border-color .2s}
+.cd-note:focus{border-color:var(--gold)}
+.cd-note-foot{display:flex;gap:6px;margin-top:8px;align-items:center}
+.cd-save-hint{flex:1;font-size:9px;color:var(--tx3);letter-spacing:.3px;font-style:italic}
+
+/* Week view */
+.wk-list{display:flex;flex-direction:column;margin-bottom:0}
+.wk-row{display:flex;align-items:center;gap:14px;padding:13px 2px;cursor:pointer;transition:opacity .2s;border-bottom:1px solid var(--line)}
+.wk-row:last-child{border-bottom:none}
+.wk-row:active{opacity:.6}
+.wk-row.today .wk-dn{color:var(--rose-deep);font-weight:600}
+.wk-d{display:flex;flex-direction:column;align-items:center;min-width:32px;gap:1px}
+.wk-dow{font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.wk-dn{font-family:var(--fd);font-size:18px;color:var(--tx);font-weight:300;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.3px}
+.wk-bar{flex:1;height:2px;background:var(--line2);overflow:hidden;position:relative;border-radius:1px}
+.wk-bar-f{height:100%;transition:width .5s;border-radius:1px}
+.wk-pct{font-family:var(--fd);font-size:12px;color:var(--tx);font-weight:400;font-variant-numeric:tabular-nums;min-width:36px;text-align:right;letter-spacing:.2px}
+.wk-nt-ic{width:14px;height:14px;display:flex;align-items:center;justify-content:center;color:var(--bl);font-size:10px;flex-shrink:0;opacity:.75}
+
+/* Year view — elegant ring-per-month grid */
+.yr-wrap{padding:4px 0 10px;margin-bottom:4px}
+.yr-nav{display:flex;align-items:center;justify-content:space-between;padding:0 4px 20px}
+.yr-title{font-family:var(--fd);font-size:22px;color:var(--tx);font-weight:200;letter-spacing:1.5px;font-variant-numeric:tabular-nums}
+.yr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 10px;margin-bottom:6px;padding:0 2px}
+.yr-m{position:relative;padding-top:100%;padding-bottom:18px;background:transparent;border:none;cursor:pointer;transition:transform .2s}
+.yr-m:active{transform:scale(.92)}
+.yr-m.cur::after{content:'';position:absolute;top:5%;left:14%;width:72%;height:72%;border-radius:50%;border:1px dashed var(--gold-line);pointer-events:none}
+.yr-ring{position:absolute;top:0;left:0;right:0;width:100%;aspect-ratio:1/1;pointer-events:none}
+.yr-m-inner{position:absolute;top:0;left:0;right:0;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;pointer-events:none;z-index:2}
+.yr-m-v{font-family:var(--fd);font-size:15px;color:var(--tx);font-weight:300;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.3px}
+.yr-m.zero .yr-m-v{color:var(--tx4)}
+.yr-m-u{font-size:8px;color:var(--tx3);font-weight:300;margin-left:1px}
+.yr-m-n{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:var(--fd);font-size:9.5px;color:var(--tx3);letter-spacing:1.4px;text-transform:uppercase;font-weight:500;line-height:1}
+.yr-m.cur .yr-m-n{color:var(--gold);font-weight:600}
+
+/* Year summary row */
+.yr-summary{display:flex;justify-content:space-around;padding:16px 4px 4px;margin-top:24px;border-top:1px solid var(--line);gap:4px}
+.yr-sum-cell{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;position:relative}
+.yr-sum-cell:not(:last-child)::after{content:'';position:absolute;right:0;top:22%;bottom:22%;width:1px;background:var(--line)}
+.yr-sum-v{font-family:var(--fd);font-size:20px;color:var(--tx);font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:-.3px;line-height:1}
+.yr-sum-u{font-size:10px;color:var(--tx3);font-weight:300;margin-left:1px}
+.yr-sum-l{font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.3px;text-transform:uppercase;font-weight:500;text-align:center}
+
+/* Per-segment performance */
+.sp-chart{display:flex;flex-direction:column;gap:2px}
+.sp-row{display:flex;align-items:center;gap:11px;padding:9px 2px;border-bottom:1px solid var(--line)}
+.sp-row:last-child{border-bottom:none}
+.sp-lbl{flex:0 0 100px;font-size:11px;color:var(--tx);display:flex;align-items:center;gap:5px;font-weight:400}
+.sp-bar{flex:1;height:2px;background:var(--line2);overflow:hidden;border-radius:1px}
+.sp-fill{height:100%;transition:width .5s;border-radius:1px}
+.sp-pct{flex:0 0 48px;text-align:right;font-family:var(--fd);font-size:12px;color:var(--tx);font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+
+/* Item performance */
+.ip-list{display:flex;flex-direction:column}
+.ip-item{display:flex;align-items:center;gap:10px;padding:10px 2px;background:transparent;border:none;border-bottom:1px solid var(--line);border-radius:0;font-size:11.5px;cursor:pointer;transition:opacity .2s}
+.ip-item:last-child{border-bottom:none}
+.ip-item:active{opacity:.6}
+.ip-item.hi .ip-days b{color:var(--matcha-deep)}
+.ip-item.low .ip-days b{color:var(--rose-deep)}
+.ip-item.mid .ip-days b{color:var(--gold)}
+.ip-item.on{background:var(--tx5)}
+.ip-tx{flex:1;color:var(--tx);display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+.ip-seg{font-family:var(--fa);font-size:12px;color:var(--gold);width:13px;text-align:center;opacity:.8}
+.ip-stat{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.ip-days{font-family:var(--fd);font-size:10px;color:var(--tx2);font-variant-numeric:tabular-nums;letter-spacing:.3px;font-weight:500}
+.ip-days b{color:var(--tx);font-weight:600}
+
+.ip-hist{padding:11px 13px 13px;margin:4px 0 8px;background:var(--card);border:1px solid var(--gold-line);border-radius:11px;box-shadow:var(--shadow-soft)}
+.ip-hist-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.ip-hist-lb{font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.ip-hist-v{font-family:var(--fd);font-size:13px;color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums}
+.ip-hist-grid{display:grid;grid-template-columns:repeat(15,1fr);gap:2px;margin-bottom:7px}
+.ip-hist-cell{aspect-ratio:1/1;border-radius:2px;background:var(--line);min-width:8px;position:relative}
+.ip-hist-cell.hit{background:var(--matcha);opacity:.85}
+.ip-hist-cell.today{box-shadow:0 0 0 1px var(--gold)}
+.ip-hist-foot{display:flex;align-items:center;justify-content:space-between;font-family:var(--fd);font-size:8.5px;color:var(--tx3);letter-spacing:1.2px;text-transform:uppercase}
+
+/* Add sheet form (used inline on pages, not popup) */
+.add-sheet{background:var(--card);border:1px solid var(--gold-line);border-radius:14px;padding:14px 14px 12px;margin-bottom:14px;box-shadow:var(--shadow-soft)}
+.add-sheet h3{font-family:var(--fa);font-size:16px;color:var(--gold);font-weight:600;letter-spacing:.3px;margin-bottom:3px;text-align:center}
+.add-sheet .add-sub{text-align:center;font-size:10px;color:var(--tx3);letter-spacing:.5px;margin-bottom:12px}
+.add-sheet-form{padding:0;display:flex;flex-direction:column;gap:8px}
+.add-sheet-form input,.add-sheet-form select,.add-sheet-form textarea{padding:10px 13px;background:var(--card2);border:1px solid var(--line2);border-radius:9px;color:var(--tx);font-size:13px;font-family:var(--f);outline:none;transition:border-color .2s}
+.add-sheet-form input.ar-in{font-family:var(--fa);font-size:17px;text-align:right;direction:rtl;line-height:1.6}
+.add-sheet-form input:focus,.add-sheet-form select:focus,.add-sheet-form textarea:focus{border-color:var(--gold)}
+.add-sheet-form label{font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;margin-top:4px}
+.add-sheet-form .btn-row{display:grid;grid-template-columns:1fr 2fr;gap:6px;margin-top:6px}
+.add-sheet-form .btn-row button{padding:12px;border-radius:9px;font-family:var(--f);font-size:12px;font-weight:500;letter-spacing:.3px;cursor:pointer;transition:all .2s;border:1px solid var(--line2)}
+.add-sheet-form .btn-row .save{background:var(--gold);color:#fff;border-color:var(--gold)}
+.add-sheet-form .btn-row .cancel{background:transparent;color:var(--tx2)}
+.add-sheet-form .btn-row button:active{transform:scale(.97)}
+
+#fi{display:none}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<input type="file" id="fi" accept=".json" onchange="doImport(event)">
+<script>
+// ═════════════════ DATA ═════════════════
+var COLS=["#b85558","#5ba082","#8a72b8","#ae843a","#5a8fb5","#b47758","#588d87","#956f38","#7565a8","#a96c55","#4a7088","#a44872"];
+
+var SEG=[
+{id:"before_fajr",lb:"قَبْلَ الفَجْرِ",th:"ก่อนศุบฮ์",col:"#1c1a34",colL:"#ece1f3",ac:"#a88cc4",acL:"#6d4d84",sym:"☽",
+ subs:[{id:"qiyam",n:"กิยามุลลัยล์",ic:"✦"},{id:"sahur",n:"สะฮูร",ic:"◐"}],
+ sun:[{t:"ตะฮัจญุด 2-8 รอกอะฮ์",h:"มุสลิม 1163"},{t:"ดุอาอ์ 1/3 สุดท้าย",h:"บุคอรี 1145"},{t:"สะฮูร (ถ้าถือศีลอด)",h:"บุคอรี 1923"},{t:"อิสติฆฟาร",h:"อาลิอิมรอน:17"}],
+ dua:[{ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ الجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّار",tl:"Allāhumma innī asʾaluka'l-jannah",mn:"โอ้อัลลอฮ์ ฉันขอสวรรค์ และคุ้มครองจากไฟนรก"}]},
+
+{id:"fajr",lb:"الفَجْر",th:"ศุบฮ์",col:"#20304e",colL:"#fbe3c6",ac:"#d0a050",acL:"#8e5f20",sym:"✦",
+ subs:[{id:"wake",n:"ตื่นนอน",ic:"✺"},{id:"wudu",n:"วุฎู่",ic:"◌"},{id:"salah",n:"ศุบฮ์",ic:"✧"},{id:"adhkar",n:"อัซการ์เช้า",ic:"❁"}],
+ sun:[{t:"ดุอาอ์ตื่นนอน",h:"บุคอรี 6324"},{t:"สิวาก",h:"บุคอรี 887"},{t:"วุฎู่",h:""},{t:"ซุนนะฮ์ก่อนศุบฮ์ 2 รอกอะฮ์",h:"มุสลิม 725"},{t:"ละหมาดศุบฮ์ ญะมาอะฮ์",h:""},{t:"ซิกร์หลังละหมาด",h:""},{t:"อัซการ์เช้า",h:""},{t:"นั่งจนอาทิตย์ขึ้น",h:"ติรมิซีย์ 586"}],
+ dua:[{ar:"الحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُور",tl:"Al-ḥamdu lillāhi'l-ladhī aḥyānā",mn:"สรรเสริญอัลลอฮ์ผู้ทรงให้เราชีวิตหลังจากให้เราตาย"},{ar:"اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا",tl:"Allāhumma bika aṣbaḥnā",mn:"โอ้อัลลอฮ์ ด้วยพระองค์เราจึงเข้าสู่รุ่งเช้า"}]},
+
+{id:"duha",lb:"الضُّحَى",th:"ฎุฮา",col:"#362e1b",colL:"#fcecc8",ac:"#e0b840",acL:"#a67a2a",sym:"✸",
+ subs:[{id:"ishraq",n:"อิชรอก",ic:"✦"},{id:"duha_s",n:"ฎุฮา",ic:"✧"},{id:"work",n:"งาน/เรียน",ic:"❋"}],
+ sun:[{t:"อิชรอก 2 รอกอะฮ์",h:""},{t:"ฎุฮา 2-8 รอกอะฮ์",h:"มุสลิม 720"},{t:"ทำงาน/เรียน",h:""}],
+ dua:[{ar:"بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ",tl:"Bismillāhi tawakkaltu ʿalā'llāh",mn:"ด้วยพระนามอัลลอฮ์ ฉันมอบหมายต่อพระองค์"}]},
+
+{id:"dhuhr",lb:"الظُّهْر",th:"ซุฮ์ริ",col:"#2a240c",colL:"#f6dcb0",ac:"#c09028",acL:"#826010",sym:"✺",
+ subs:[{id:"sb",n:"ซุนนะฮ์ก่อน",ic:"✧"},{id:"sd",n:"ซุฮ์ริ",ic:"✦"},{id:"sa",n:"ซุนนะฮ์หลัง",ic:"❁"}],
+ sun:[{t:"ซุนนะฮ์ก่อน 4 รอกอะฮ์",h:"อบูดาวูด 1269"},{t:"ซุฮ์ริ",h:""},{t:"ซุนนะฮ์หลัง 2 รอกอะฮ์",h:""}],
+ dua:[{ar:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَن",tl:"Allāhumma innī aʿūdhu bika mina'l-ham",mn:"โอ้อัลลอฮ์ ฉันขอคุ้มครองจากความกังวลและความเศร้า"}]},
+
+{id:"asr",lb:"العَصْر",th:"อัศริ",col:"#261a04",colL:"#f0c6a0",ac:"#c88428",acL:"#9a5a3a",sym:"✶",
+ subs:[{id:"sala",n:"อัศริ",ic:"✦"},{id:"adhe",n:"อัซการ์เย็น",ic:"❁"}],
+ sun:[{t:"ละหมาดอัศริ",h:""},{t:"อัซการ์เย็น",h:""},{t:"อัล-กะฮ์ฟ์ (ศุกร์)",h:"อัลฮากิม"}],
+ dua:[{ar:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ",tl:"Amsaynā wa-amsa'l-mulku lillāh",mn:"เราเข้าสู่ยามเย็น อำนาจทั้งหมดเป็นของอัลลอฮ์"}]},
+
+{id:"maghrib",lb:"المَغْرِب",th:"มัฆริบ",col:"#271206",colL:"#eebaa8",ac:"#d07040",acL:"#a4584a",sym:"❈",
+ subs:[{id:"iftar",n:"ละศีลอด",ic:"◐"},{id:"sm",n:"มัฆริบ",ic:"✦"},{id:"snm",n:"ซุนนะฮ์หลัง",ic:"❁"}],
+ sun:[{t:"ดุอาอ์ละศีลอด",h:"อบูดาวูด 2357"},{t:"มัฆริบ",h:""},{t:"ซุนนะฮ์หลัง 2 รอกอะฮ์",h:""}],
+ dua:[{ar:"ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ",tl:"Dhahaba'ẓ-ẓamaʾu wa'btallati'l-ʿurūq",mn:"ความกระหายหมดไป เส้นเลือดชุ่มชื้น ผลบุญตั้งมั่น"}]},
+
+{id:"isha",lb:"العِشَاء",th:"อิชาอ์",col:"#101028",colL:"#dcd0e6",ac:"#8878b8",acL:"#5e487c",sym:"☾",
+ subs:[{id:"si",n:"อิชาอ์",ic:"✦"},{id:"witr",n:"วิตร์",ic:"✧"},{id:"sleep",n:"ก่อนนอน",ic:"☾"}],
+ sun:[{t:"อิชาอ์",h:""},{t:"ซุนนะฮ์หลัง 2 รอกอะฮ์",h:""},{t:"วิตร์",h:"บุคอรี 998"},{t:"วุฎู่ก่อนนอน",h:""},{t:"ปัดเตียง 3 ครั้ง",h:"บุคอรี 6320"},{t:"อายะตุลกุรซีย์",h:"บุคอรี 5010"},{t:"อัล-มุลก์",h:"อบูดาวูด 1400"},{t:"เป่า 3 กุล",h:"บุคอรี 5017"},{t:"นอนตะแคงขวา",h:"บุคอรี 247"}],
+ dua:[{ar:"بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",tl:"Bismika'llāhumma amūtu wa-aḥyā",mn:"ด้วยพระนามของพระองค์ ฉันตายและมีชีวิต"}]}
+];
+
+var PN=[
+{k:"Fajr",ar:"الفَجْر",th:"ศุบฮ์"},
+{k:"Sunrise",ar:"الشُّرُوق",th:"ชุรูก"},
+{k:"Dhuhr",ar:"الظُّهْر",th:"ซุฮ์ริ"},
+{k:"Asr",ar:"العَصْر",th:"อัศริ"},
+{k:"Maghrib",ar:"المَغْرِب",th:"มัฆริบ"},
+{k:"Isha",ar:"العِشَاء",th:"อิชาอ์"}
+];
+
+var MONTH_TH=["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
+var MONTH_SH=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+var DOW_TH=["อา","จ","อ","พ","พฤ","ศ","ส"];
+var DOW_FULL=["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
+
+// ═════════════════ STATE ═════════════════
+var D={
+  pt:null, hj:null, gd:"", hjOffset:0,
+  act:null, sub:null,
+  suns:{}, duas:{}, segSubs:{},
+  todayDone:{},
+  dayTotals:{},
+  duaIdx:{},
+  hRef:{},
+  notes:{},
+  activities:[
+    {n:"นอนหลับ",s:"22:00",e:"05:00",c:"#4a5578"},
+    {n:"ทำงาน/เรียน",s:"08:00",e:"16:00",c:"#5b9078"}
+  ],
+  view:"home", theme:"auto",
+  tab:"sunnah",
+  menuOpen:null, editOpen:null,
+  editT:"",editH:"",editAr:"",editTl:"",editMn:"",editSub:"",
+  actEditId:null, actEditN:"", actEditS:"", actEditE:"", actEditC:"",
+  fabOpen:false, fabMode:null,
+  qaT:"", qaTl:"", qaMn:"", qaSub:"",
+  qaSeg:null,
+  actFormOpen:false, actN:"", actS:"", actE:"", actC:"#5b9078",
+  subFormOpen:null, // segId when adding, null when not
+  subFormIc:"✦", subFormN:"",
+  subEditKey:null, // segId+subId when editing
+  subEditIc:"", subEditN:"",
+  statPeriod:"month",
+  statMonthOff:0,
+  statYearOff:0,
+  statFilterSeg:null,
+  statSelDate:null,
+  statItemDrill:null,
+  statSegOpen:{}, // which segment's items are expanded in stats
+  noteDraft:"",
+  settingsOpen:{theme:true,hijri:false,subs:false,data:false,about:false},
+  // Add form mode for home page inline
+  addSheetOpen:false,
+  addSheetMode:null
+};
+
+SEG.forEach(function(s){
+  D.suns[s.id]=s.sun.map(function(x){return{t:x.t,h:x.h,sub:null,sys:true}});
+  D.duas[s.id]=s.dua.map(function(x){return{ar:x.ar,tl:x.tl,mn:x.mn,sub:null,sys:true}});
+  D.segSubs[s.id]=s.subs.map(function(x){return{id:x.id,n:x.n,ic:x.ic}});
+  D.duaIdx[s.id]=0;
+});
+
+function sv(){
+  try{
+    D.dayTotals[dateKey()]=computeTotals();
+    localStorage.setItem("sc19",JSON.stringify({
+      suns:D.suns,duas:D.duas,segSubs:D.segSubs,
+      todayDone:D.todayDone,dayTotals:D.dayTotals,
+      duaIdx:D.duaIdx,hRef:D.hRef,notes:D.notes,
+      activities:D.activities,theme:D.theme,tab:D.tab,
+      hjOffset:D.hjOffset
+    }));
+  }catch(e){}
+}
+function lo(){
+  try{
+    var r=localStorage.getItem("sc19");
+    if(r){
+      var d=JSON.parse(r);
+      ["suns","duas","segSubs","todayDone","dayTotals","duaIdx","hRef","notes","activities","theme","tab","hjOffset"].forEach(function(k){
+        if(d[k]!==undefined)D[k]=d[k];
+      });
+    } else {
+      var old=localStorage.getItem("sc18")||localStorage.getItem("sc16")||localStorage.getItem("sc15")||localStorage.getItem("sc14");
+      if(old){
+        try{
+          var od=JSON.parse(old);
+          ["suns","duas","segSubs","todayDone","dayTotals","duaIdx","hRef","notes","activities","theme"].forEach(function(k){
+            if(od[k]!==undefined)D[k]=od[k];
+          });
+        }catch(e){}
+      }
+    }
+    SEG.forEach(function(s){
+      if(!D.segSubs[s.id])D.segSubs[s.id]=s.subs.map(function(x){return{id:x.id,n:x.n,ic:x.ic}});
+      if(D.duaIdx[s.id]===undefined)D.duaIdx[s.id]=0;
+      if(!D.suns[s.id])D.suns[s.id]=[];
+      if(!D.duas[s.id])D.duas[s.id]=[];
+      D.suns[s.id].forEach(function(it){if(it.sub===undefined)it.sub=null});
+      D.duas[s.id].forEach(function(it){if(it.sub===undefined)it.sub=null});
+    });
+    if(typeof D.hjOffset!=="number")D.hjOffset=0;
+  }catch(e){}
+}
+lo();
+
+// ═════════════════ HELPERS ═════════════════
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}
+function toM(t){var p=(t||"0:0").split(":");return parseInt(p[0])*60+parseInt(p[1]||0)}
+function fH(m){m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,"0")+":"+String(Math.round(m%60)).padStart(2,"0")}
+function fDur(m){if(m<=0)m+=1440;if(m>1440)m-=1440;var h=Math.floor(m/60),mi=Math.round(m%60);return mi?h+"h "+mi+"m":h+"h"}
+function fDurTh(m){if(m<=0)m+=1440;if(m>1440)m-=1440;var h=Math.floor(m/60),mi=Math.round(m%60);if(h===0)return mi+" นาที";if(mi===0)return h+" ชม.";return h+" ชม. "+mi+" น."}
+function calcNi(){if(!D.pt)return{half:0,third:0,len:0};var mg=toM(D.pt.Maghrib),fj=toM(D.pt.Fajr),len=fj>mg?fj-mg:(1440-mg)+fj;return{half:(mg+Math.round(len/2))%1440,third:(mg+Math.round(len*2/3))%1440,len:len}}
+function segM(seg){
+  if(!D.pt)return{before_fajr:[0,300],fajr:[300,390],karahah:[390,405],duha:[405,705],dhuhr:[705,870],asr:[870,1050],maghrib:[1050,1170],isha:[1170,1430]}[seg.id]||[0,1440];
+  var f=toM(D.pt.Fajr),sr=toM(D.pt.Sunrise),d=toM(D.pt.Dhuhr),a=toM(D.pt.Asr),m=toM(D.pt.Maghrib),i=toM(D.pt.Isha),ni=calcNi();
+  return{before_fajr:[ni.half,f],fajr:[f,sr],duha:[sr+15,d-15],dhuhr:[d-15,a],asr:[a,m],maghrib:[m,i],isha:[i,ni.half]}[seg.id]||[0,1440];
+}
+function karahahM(){
+  if(!D.pt)return null;
+  var sr=toM(D.pt.Sunrise);
+  return[sr,sr+15];
+}
+function segDur(s){var r=segM(s),d=r[1]-r[0];if(d<=0)d+=1440;return d}
+function curSeg(){var nm=new Date().getHours()*60+new Date().getMinutes();for(var i=0;i<SEG.length;i++){var r=segM(SEG[i]);if(r[0]<=r[1]){if(nm>=r[0]&&nm<r[1])return SEG[i]}else{if(nm>=r[0]||nm<r[1])return SEG[i]}}return SEG[6]}
+function curActs(){var nm=new Date().getHours()*60+new Date().getMinutes();return D.activities.filter(function(a){var s=toM(a.s),e=toM(a.e);if(e<=s)return nm>=s||nm<e;return nm>=s&&nm<e})}
+function isDay(){if(!D.pt)return false;var nm=new Date().getHours()*60+new Date().getMinutes();return nm>=toM(D.pt.Sunrise)&&nm<toM(D.pt.Maghrib)}
+function isPast(seg){var r=segM(seg),nm=new Date().getHours()*60+new Date().getMinutes();if(r[0]<=r[1])return nm>=r[1];return false}
+function applyTh(){var light=D.theme==="light"||(D.theme==="auto"&&isDay());document.body.classList.toggle("L",light)}
+function isL(){return document.body.classList.contains("L")}
+function segCol(s){return isL()?s.colL:s.col}
+function segAc(s){return isL()?s.acL:s.ac}
+
+function dateKey(d){
+  d=d||new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function dateKeyOffset(offset){var d=new Date();d.setDate(d.getDate()+offset);return dateKey(d)}
+function dateKeyOf(y,m,d){return y+"-"+String(m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0")}
+
+// Hijri day (with user offset applied)
+function hijriDayFor(dk){
+  if(!D.hj)return null;
+  var parts=dk.split("-");
+  var target=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  target.setHours(12,0,0,0);
+  var today=new Date();today.setHours(12,0,0,0);
+  var diffDays=Math.round((target-today)/(1000*60*60*24));
+  var hd=parseInt(D.hj.day)+diffDays+(D.hjOffset||0);
+  while(hd>30)hd-=30;
+  while(hd<1)hd+=30;
+  return hd;
+}
+// Today's effective Hijri day including offset
+function hijriToday(){
+  if(!D.hj)return null;
+  var hd=parseInt(D.hj.day)+(D.hjOffset||0);
+  while(hd>30)hd-=30;
+  while(hd<1)hd+=30;
+  return hd;
+}
+
+function fastingSunnahMark(dk){
+  var parts=dk.split("-");
+  var dt=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  var wd=dt.getDay();
+  var hd=hijriDayFor(dk);
+  if(hd===13||hd===14||hd===15)return{label:"◯",cls:"white",title:"วันสีขาว "+hd+" · ซุนนะฮ์ถือศีลอด"};
+  if(wd===1)return{label:"☪",cls:"",title:"วันจันทร์ · ซุนนะฮ์ถือศีลอด"};
+  if(wd===4)return{label:"☪",cls:"",title:"วันพฤหัสบดี · ซุนนะฮ์ถือศีลอด"};
+  return null;
+}
+function isDone(type,seg,idx){return !!D.todayDone[dateKey()+"_"+type+"_"+seg+"_"+idx]}
+function tglDone(type,seg,idx){
+  var k=dateKey()+"_"+type+"_"+seg+"_"+idx;
+  D.todayDone[k]=!D.todayDone[k];
+  if(!D.dayTotals[dateKey()])D.dayTotals[dateKey()]=computeTotals();
+  sv();render();
+}
+function computeTotals(){
+  var s=0,d=0;
+  SEG.forEach(function(sg){s+=(D.suns[sg.id]||[]).length;d+=(D.duas[sg.id]||[]).length});
+  return{sun:s,dua:d,total:s+d};
+}
+
+// ═════════════════ SMART ALERTS ═════════════════
+function getTodayAlerts(){
+  var alerts=[];
+  var d=new Date(),wd=d.getDay();
+  if(wd===5)alerts.push({ic:"❖",ar:"يَوْمُ الجُمُعَة",th:"อ่านซูเราะฮ์อัลกะฮ์ฟิ · ดุอาอ์ให้มากในช่วงบ่าย",tag:"JUMU'AH",rose:true});
+  if(wd===1||wd===4){
+    var dn=wd===1?"จันทร์":"พฤหัสบดี";
+    alerts.push({ic:"☪",ar:"صَوْمُ الاثْنَيْنِ وَالخَمِيس",th:"ซุนนะฮ์ถือศีลอดวัน"+dn,tag:"SAWM SUNNAH"});
+  }
+  if(D.hj){
+    var hd=hijriToday();
+    if(hd>=13&&hd<=15)alerts.push({ic:"◯",ar:"الأَيَّامُ البِيض · "+hd,th:"วันสีขาว · ซุนนะฮ์ถือศีลอด 13-14-15",tag:"AYYAM AL-BIDH",rose:true});
+    if(D.hj.month&&D.hj.month.number===9){
+      if(hd>=21)alerts.push({ic:"✴",ar:"العَشْرُ الأَوَاخِر",th:"10 คืนสุดท้ายรอมฎอน · ตามหาลัยละตุลก็อดร์",tag:"LAST 10"});
+    }
+    if(D.hj.month&&D.hj.month.number===12&&hd===9)alerts.push({ic:"✦",ar:"يَوْمُ عَرَفَة",th:"วันอะร็อฟะฮ์ · ซุนนะฮ์ถือศีลอด",tag:"ARAFAH"});
+    if(D.hj.month&&D.hj.month.number===1&&(hd===9||hd===10))alerts.push({ic:"✦",ar:"يَوْمُ عَاشُورَاء",th:"ซุนนะฮ์ถือศีลอดตาสุอาอ์-อาชูรออ์",tag:"ASHURA"});
+  }
+  return alerts;
+}
+
+// ═════════════════ ANALYTICS ═════════════════
+function dayStats(dk){
+  var sd=0,dd=0;
+  Object.keys(D.todayDone).forEach(function(k){
+    if(!D.todayDone[k])return;
+    if(k.indexOf(dk+"_")!==0)return;
+    if(k.indexOf("_sun_")>0)sd++;
+    else if(k.indexOf("_dua_")>0)dd++;
+  });
+  var tot=D.dayTotals[dk]||computeTotals();
+  var done=sd+dd;
+  var possible=tot.total||0;
+  return{done:done,possible:possible,sun:sd,dua:dd,sunTotal:tot.sun||0,duaTotal:tot.dua||0,pct:possible?done/possible:0};
+}
+function segDayStats(segId,dk){
+  var sd=0,dd=0,sTot=(D.suns[segId]||[]).length,dTot=(D.duas[segId]||[]).length;
+  (D.suns[segId]||[]).forEach(function(_,i){if(D.todayDone[dk+"_sun_"+segId+"_"+i])sd++});
+  (D.duas[segId]||[]).forEach(function(_,i){if(D.todayDone[dk+"_dua_"+segId+"_"+i])dd++});
+  var tot=sTot+dTot;
+  return{done:sd+dd,possible:tot,pct:tot?(sd+dd)/tot:0};
+}
+function segStatsToday(segId){return segDayStats(segId,dateKey())}
+
+function streaks(threshold){
+  threshold=threshold||0.5;
+  var cur=0,best=0,run=0;
+  for(var i=0;i<400;i++){
+    var dk=dateKeyOffset(-i);
+    var st=dayStats(dk);
+    if(st.possible===0){if(i===0)continue;break}
+    if(st.pct>=threshold){run++;if(run>best)best=run}
+    else{run=0;if(i>60)break}
+  }
+  cur=0;
+  for(var j=0;j<400;j++){
+    var dkj=dateKeyOffset(-j);
+    var stj=dayStats(dkj);
+    if(stj.possible===0&&j===0)continue;
+    if(stj.pct>=threshold)cur++; else break;
+  }
+  return{cur:cur,best:Math.max(best,cur)};
+}
+
+function segPerf(segId,days){
+  days=days||30;
+  var tot=0,done=0;
+  var sunList=D.suns[segId]||[],duaList=D.duas[segId]||[];
+  var st=sunList.length+duaList.length;
+  if(!st)return 0;
+  for(var i=0;i<days;i++){
+    var dk=dateKeyOffset(-i);tot+=st;
+    sunList.forEach(function(_,i2){if(D.todayDone[dk+"_sun_"+segId+"_"+i2])done++});
+    duaList.forEach(function(_,i2){if(D.todayDone[dk+"_dua_"+segId+"_"+i2])done++});
+  }
+  return tot?done/tot:0;
+}
+function itemPerf(type,segId,idx,days){
+  days=days||30;var hit=0,cap=0;
+  for(var i=0;i<days;i++){var dk=dateKeyOffset(-i);cap++;if(D.todayDone[dk+"_"+type+"_"+segId+"_"+idx])hit++}
+  return{hit:hit,cap:cap,pct:cap?hit/cap:0};
+}
+
+function periodStats(dkList,filterSeg){
+  var done=0,possible=0,days=0,dayPcts=[];
+  dkList.forEach(function(dk){
+    if(filterSeg){
+      var ss=segDayStats(filterSeg,dk);
+      done+=ss.done;possible+=ss.possible;
+      if(ss.possible>0){days++;dayPcts.push(ss.pct)}
+    } else {
+      var ds=dayStats(dk);
+      done+=ds.done;possible+=ds.possible;
+      if(ds.possible>0){days++;dayPcts.push(ds.pct)}
+    }
+  });
+  return{done:done,possible:possible,days:days,pct:possible?done/possible:0,dayPcts:dayPcts};
+}
+
+// ═════════════════ COUNTDOWN ═════════════════
+function nextPrayer(){
+  if(!D.pt)return null;
+  var nm=new Date().getHours()*60+new Date().getMinutes();
+  var order=["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"];
+  for(var i=0;i<order.length;i++){
+    var k=order[i],m=toM(D.pt[k]);
+    if(nm<m){var pn=PN.find(function(p){return p.k===k});return{key:k,ar:pn.ar,th:pn.th,at:D.pt[k],mins:m-nm}}
+  }
+  var fm=toM(D.pt.Fajr),mins=(1440-nm)+fm,pn2=PN[0];
+  return{key:"Fajr",ar:pn2.ar,th:pn2.th,at:D.pt.Fajr,mins:mins,next:true};
+}
+
+// ═════════════════ GEOMETRY ═════════════════
+function pXY(cx,cy,r,deg){var rd=(deg-90)*Math.PI/180;return[cx+r*Math.cos(rd),cy+r*Math.sin(rd)]}
+function secP(cx,cy,r,d1,d2){var s=pXY(cx,cy,r,d1),e=pXY(cx,cy,r,d2);return"M"+cx+","+cy+"L"+s[0]+","+s[1]+"A"+r+","+r+",0,"+(d2-d1>180?1:0)+",1,"+e[0]+","+e[1]+"Z"}
+function ringP(cx,cy,ri,ro,d1,d2){var a=pXY(cx,cy,ro,d1),b=pXY(cx,cy,ro,d2),c=pXY(cx,cy,ri,d2),dd=pXY(cx,cy,ri,d1);var lg=d2-d1>180?1:0;return"M"+a[0]+","+a[1]+"A"+ro+","+ro+",0,"+lg+",1,"+b[0]+","+b[1]+"L"+c[0]+","+c[1]+"A"+ri+","+ri+",0,"+lg+",0,"+dd[0]+","+dd[1]+"Z"}
+function mD(m){return(m/1440)*360}
+function midA(s,e){if(s<=e)return mD((s+e)/2);var t=1440-s+e;return mD((s+t/2)%1440)}
+function drawS(cx,cy,r,sM,eM,attr){var o="";if(sM<=eM)o+='<path d="'+secP(cx,cy,r,mD(sM),mD(eM))+'" '+attr+"/>";else{o+='<path d="'+secP(cx,cy,r,mD(sM),360)+'" '+attr+"/>";o+='<path d="'+secP(cx,cy,r,0,mD(eM))+'" '+attr+"/>"}return o}
+function drawR(cx,cy,ri,ro,sM,eM,attr){var o="";if(sM<=eM)o+='<path d="'+ringP(cx,cy,ri,ro,mD(sM),mD(eM))+'" '+attr+"/>";else{o+='<path d="'+ringP(cx,cy,ri,ro,mD(sM),360)+'" '+attr+"/>";o+='<path d="'+ringP(cx,cy,ri,ro,0,mD(eM))+'" '+attr+"/>"}return o}
+
+// ═════════════════ RENDER ═════════════════
+var _renderTimer=null;
+function render(){
+  if(_renderTimer)return;
+  _renderTimer=requestAnimationFrame(function(){
+    _renderTimer=null;
+    var mainY=window.scrollY;
+    try{_render()}catch(e){document.getElementById("app").innerHTML='<div style="padding:20px;color:#c85050">Error: '+esc(e.message)+'</div>';console.error(e)}
+    window.scrollTo(0,mainY);
+  });
+}
+
+function _render(){
+  applyTh();
+  var ap=document.getElementById("app");
+  var o="";
+
+  // Route to view
+  if(D.view==="home")o+=renderHome();
+  else if(D.view==="brief")o+=renderBrief();
+  else if(D.view==="act")o+=renderAct();
+  else if(D.view==="stats")o+=renderStats();
+  else if(D.view==="settings")o+=renderSettings();
+  else o+=renderHome();
+
+  // Dock (always)
+  o+=renderDock();
+
+  // FAB (only on home, for quick-add)
+  if(D.view==="home"&&!D.addSheetOpen){
+    o+='<button class="fab'+(D.fabOpen?" on":"")+'" onclick="tglFab()">+</button>';
+    if(D.fabOpen){
+      o+='<div class="fab-bg" onclick="tglFab()"></div>';
+      o+='<div class="fab-sheet">';
+      o+='<button class="fab-item" onclick="openAdd(\'sunnah\')"><span class="fi-ic">✦</span>เพิ่มซุนนะฮ์</button>';
+      o+='<button class="fab-item" onclick="openAdd(\'dua\')"><span class="fi-ic">❖</span>เพิ่มดุอาอ์</button>';
+      o+='<button class="fab-item" onclick="openAdd(\'activity\')"><span class="fi-ic">◉</span>เพิ่มกิจกรรม</button>';
+      o+='</div>';
+    }
+  }
+
+  ap.innerHTML=o;
+}
+
+function renderDock(){
+  var items=[
+    {v:"home",ic:"◎",th:"หน้าหลัก"},
+    {v:"brief",ic:"❖",th:"สรุป"},
+    {v:"act",ic:"◉",th:"กิจกรรม"},
+    {v:"stats",ic:"◈",th:"สถิติ"},
+    {v:"settings",ic:"⊚",th:"ตั้งค่า"}
+  ];
+  var o='<div class="dock">';
+  items.forEach(function(it){
+    o+='<button class="d-btn'+(D.view===it.v?" on":"")+'" onclick="goView(\''+it.v+'\')"><span class="d-ic">'+it.ic+'</span><span>'+it.th+'</span></button>';
+  });
+  o+='</div>';
+  return o;
+}
+
+
+// ═════════════════ PAGE: HOME ═════════════════
+function renderHome(){
+  var cs=curSeg(),n=new Date();
+  var ch=n.getHours()*60+n.getMinutes();
+  var ni=calcNi(),cA=curActs();
+  var vs=D.act?(SEG.find(function(s){return s.id===D.act})||cs):cs;
+  var viewingOther=D.act&&D.act!==cs.id;
+  // Correct: walk forward in time, keep overwriting — last match = most recent prayer before now
+  var cpk=null;
+  if(D.pt){
+    var order=["Fajr","Sunrise","Dhuhr","Asr","Maghrib","Isha"];
+    for(var _i=0;_i<order.length;_i++){
+      if(ch>=toM(D.pt[order[_i]]))cpk=order[_i];
+    }
+    // Before Fajr → show Isha (previous day's) as the active segment
+    if(cpk===null)cpk="Isha";
+  }
+  var o="";
+
+  // Watch-face Header (replaces basmala + old header)
+  var thEmoji=D.theme==="auto"?"✴":D.theme==="light"?"☀":"☾";
+  var thLbl=D.theme==="auto"?"auto":D.theme==="light"?"day":"night";
+  var timeNow=fH(ch);
+  var dowShort=DOW_FULL[n.getDay()];
+  var gregDate="";
+  if(D.gd){var parts=D.gd.split("-");gregDate=parts[0]+" "+MONTH_TH[parseInt(parts[1])-1]+" "+parts[2]}
+  o+='<div class="wf-hdr">';
+  o+='<div class="wf-main">';
+  o+='<div class="wf-time">'+timeNow+'</div>';
+  o+='<div class="wf-meta">';
+  o+='<span class="wf-greg">'+dowShort+(gregDate?" · "+gregDate:"")+'</span>';
+  if(D.hj){
+    var hdToday=hijriToday();
+    var hasOff=(D.hjOffset||0)!==0;
+    o+='<span class="wf-sep">·</span>';
+    o+='<span class="wf-hj" onclick="goHijriSettings()" title="ปรับวันฮิจเราะฮ์">'+hdToday+' '+esc(D.hj.month.ar)+' '+esc(D.hj.year)+'هـ</span>';
+    if(hasOff)o+='<span class="wf-hj-off">'+(D.hjOffset>0?"+"+D.hjOffset:D.hjOffset)+'d</span>';
+  }
+  o+='</div>';
+  o+='</div>';
+  o+='<div class="wf-side"><button class="th-circ" data-mode="'+thLbl+'" onclick="cycleTh()">'+thEmoji+'</button></div>';
+  o+='</div>';
+
+  // Smart alerts
+  var alerts=getTodayAlerts();
+  if(alerts.length){
+    o+='<div class="alerts">';
+    alerts.forEach(function(a){
+      o+='<div class="alert'+(a.rose?" alert-rose":"")+'">';
+      o+='<span class="a-ic">'+a.ic+'</span>';
+      o+='<div class="a-bd"><div class="a-ar">'+a.ar+'</div><div class="a-th">'+esc(a.th)+'</div></div>';
+      o+='<span class="a-tag">'+a.tag+'</span>';
+      o+='</div>';
+    });
+    o+='</div>';
+  }
+
+  // Prayer strip
+  o+='<div class="p-strip">';
+  PN.forEach(function(p){
+    o+='<div class="p-cell'+(cpk===p.k?" cur":"")+'">';
+    o+='<div class="pa">'+p.ar+'</div>';
+    o+='<div class="pt">'+(D.pt?D.pt[p.k]:"--:--")+'</div>';
+    o+='<div class="pn">'+p.th+'</div>';
+    o+='</div>';
+  });
+  o+='</div>';
+
+  // Clock (times for ½ night / ⅓ last are drawn on clock itself)
+  o+=renderClock(cs,vs,ch);
+
+  // Countdown hero — moved BELOW the clock
+  var np=nextPrayer();
+  if(np){
+    var hrs=Math.floor(np.mins/60),mns=np.mins%60;
+    var big,unit;
+    if(np.mins<1){big="‹1";unit="นาที"}
+    else if(hrs===0){big=mns;unit="นาที"}
+    else if(mns===0){big=hrs;unit="ชม."}
+    else{big=hrs+":"+String(mns).padStart(2,"0");unit="ชม."}
+    o+='<div class="cd-hero">';
+    o+='<div class="cd-lab">';
+    o+='<div class="cd-eyebrow">ถัดไป · Next</div>';
+    o+='<div class="cd-name">'+np.ar+'<span class="cd-th">'+np.th+(np.next?" · พรุ่งนี้":"")+'</span></div>';
+    o+='</div>';
+    o+='<div class="cd-clock">';
+    o+='<div class="cd-big">'+big+'<span class="cd-u"> '+unit+'</span></div>';
+    o+='<div class="cd-time-at">เวลา '+np.at+'</div>';
+    o+='</div>';
+    o+='</div>';
+  }
+
+  // Segment pills
+  o+='<div class="seg-row">';
+  SEG.forEach(function(sg){
+    var cls="s-pill";
+    if(cs.id===sg.id)cls+=" cur";
+    if(D.act===sg.id)cls+=" sel";
+    if(isPast(sg)&&cs.id!==sg.id&&D.act!==sg.id)cls+=" past";
+    var ss=segStatsToday(sg.id);
+    o+='<button class="'+cls+'" onclick="selSeg(\''+sg.id+'\')">';
+    o+='<span class="s-sym">'+sg.sym+'</span>';
+    o+='<span class="s-lbl">'+sg.th+'</span>';
+    if(ss.possible>0)o+='<span class="s-prog"><span class="s-prog-f" style="width:'+Math.round(ss.pct*100)+'%"></span></span>';
+    o+='</button>';
+  });
+  o+='</div>';
+
+  // Inline add sheet (if open)
+  if(D.addSheetOpen){
+    o+=renderAddSheet();
+  }
+
+  // Panel
+  o+='<div class="panel">';
+  var r=segM(vs);
+  var ss=segStatsToday(vs.id);
+  var pct=Math.round(ss.pct*100);
+  var ringDash=Math.round(ss.pct*100.5);
+  o+='<div class="p-hd">';
+  o+='<div class="p-mark" style="background:'+segAc(vs)+'"></div>';
+  o+='<div class="p-inf">';
+  o+='<div class="p-ar" style="color:'+segAc(vs)+'">'+vs.lb+'</div>';
+  o+='<div class="p-sub"><span class="th">'+vs.th+'</span><span class="sep">·</span><span>'+fH(r[0])+' → '+fH(r[1])+'</span></div>';
+  o+='</div>';
+  if(ss.possible>0){
+    o+='<div class="p-ring"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="var(--line2)" stroke-width="2.5"/><circle cx="20" cy="20" r="16" fill="none" stroke="'+segAc(vs)+'" stroke-width="2.5" stroke-dasharray="'+ringDash+' 100.5" stroke-linecap="round"/></svg><div class="rt">'+pct+'</div></div>';
+  }
+  if(viewingOther)o+='<button class="p-back" onclick="D.act=null;D.sub=null;render()" title="กลับไปช่วงปัจจุบัน">↺</button>';
+  o+='</div>';
+
+  // Current activities
+  if(!viewingOther&&cA.length){
+    cA.forEach(function(a){
+      o+='<div class="cur-act-row"><span class="ca-dot" style="background:'+a.c+'"></span><span class="ca-n">'+esc(a.n)+'</span><span class="ca-t">'+a.s+'–'+a.e+'</span></div>';
+    });
+  }
+
+  // Focus Now bar
+  var focusHint=getFocusHint(vs);
+  if(focusHint){
+    var doneCls=ss.pct>=1?" focus-done":"";
+    o+='<div class="focus-now'+doneCls+'"><span class="fn-ic">◈</span><span class="fn-tx">'+esc(focusHint.tx)+'</span><span class="fn-pct">'+focusHint.pct+'%</span></div>';
+  }
+
+  var suns=D.suns[vs.id]||[],duas=D.duas[vs.id]||[],subs=D.segSubs[vs.id]||[];
+  var doneSunCount=0;suns.forEach(function(_,i){if(isDone("sun",vs.id,i))doneSunCount++});
+  var doneDuaCount=0;duas.forEach(function(_,i){if(isDone("dua",vs.id,i))doneDuaCount++});
+
+  // Panel tabs
+  o+='<div class="p-tabs">';
+  o+='<button class="p-tab'+(D.tab==="sunnah"?" on":"")+'" onclick="setTab(\'sunnah\')">ซุนนะฮ์<span class="tc">'+doneSunCount+"/"+suns.length+'</span></button>';
+  o+='<button class="p-tab'+(D.tab==="dua"?" on":"")+'" onclick="setTab(\'dua\')">ดุอาอ์<span class="tc">'+doneDuaCount+"/"+duas.length+'</span></button>';
+  o+='</div>';
+
+  if(D.tab==="sunnah"){o+=renderSunList(vs.id,suns,subs)}
+  else{o+=renderDuaBlock(vs.id,duas)}
+
+  o+='</div>'; // end panel
+
+  return o;
+}
+
+function renderClock(cs,vs,ch){
+  var cx=180,cy=180,Rc=128,Ro=155,Ri=135;
+  var todayPct=Math.round(dayStats(dateKey()).pct*100);
+  var o='<div class="clock-box">';
+  o+='<div class="now-chip"><span class="now-dot"></span>'+fH(ch)+'</div>';
+  o+='<div class="now-seg-lbl">'+cs.lb+'</div>';
+  o+='<svg viewBox="0 0 360 360">';
+  // activity ring
+  D.activities.forEach(function(a){
+    var sM=toM(a.s),eM=toM(a.e);
+    o+=drawR(cx,cy,Ri,Ro,sM,eM,'fill="'+a.c+(isL()?"22":"28")+'" stroke="'+a.c+(isL()?"44":"55")+'" stroke-width=".35"');
+    var md=midA(sM,eM),p=pXY(cx,cy,(Ri+Ro)/2,md);
+    var sp=eM>=sM?eM-sM:1440-sM+eM;
+    if(mD(sp)>14)o+='<text x="'+p[0]+'" y="'+p[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+a.c+'" font-size="4.5" font-weight="600" style="pointer-events:none">'+esc(a.n)+'</text>';
+  });
+  // segments
+  var boundaries=[];
+  SEG.forEach(function(sg){
+    var r=segM(sg),sM=r[0],eM=r[1];
+    var isA=D.act===sg.id,isCur=cs.id===sg.id;
+    var fillC=segCol(sg),accC=segAc(sg);
+    o+=drawS(cx,cy,Rc,sM,eM,'fill="'+fillC+'" stroke="none" onclick="selSeg(\''+sg.id+'\')" style="cursor:pointer"');
+    boundaries.push(sM);
+    if(isA||isCur){
+      var arcW=isA?2.2:1.1;
+      var arcC=isA?accC:accC+(isL()?"99":"88");
+      var arcR=Rc-(isA?1.2:.6);
+      var arcShadow=isA?' style="filter:drop-shadow(0 0 4px '+accC+(isL()?"66":"66")+');pointer-events:none"':' style="pointer-events:none"';
+      if(sM<=eM){
+        var s1=pXY(cx,cy,arcR,mD(sM)),e1=pXY(cx,cy,arcR,mD(eM));
+        var lg=mD(eM)-mD(sM)>180?1:0;
+        o+='<path d="M'+s1[0]+','+s1[1]+' A'+arcR+','+arcR+' 0 '+lg+' 1 '+e1[0]+','+e1[1]+'" fill="none" stroke="'+arcC+'" stroke-width="'+arcW+'" stroke-linecap="round"'+arcShadow+'/>';
+      } else {
+        var s2=pXY(cx,cy,arcR,mD(sM)),m1=pXY(cx,cy,arcR,mD(0)),m2=pXY(cx,cy,arcR,mD(0)),e2=pXY(cx,cy,arcR,mD(eM));
+        o+='<path d="M'+s2[0]+','+s2[1]+' A'+arcR+','+arcR+' 0 0 1 '+m2[0]+','+m2[1]+' M'+m1[0]+','+m1[1]+' A'+arcR+','+arcR+' 0 0 1 '+e2[0]+','+e2[1]+'" fill="none" stroke="'+arcC+'" stroke-width="'+arcW+'" stroke-linecap="round"'+arcShadow+'/>';
+      }
+    }
+    var md=midA(sM,eM),lp=pXY(cx,cy,Rc*.44,md),ip=pXY(cx,cy,Rc*.7,md),bp=pXY(cx,cy,Rc*.88,md);
+    var durH=(segDur(sg)/60).toFixed(1);
+    o+='<text x="'+ip[0]+'" y="'+ip[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+accC+'" font-size="11" font-family="var(--fa)" font-weight="500" style="pointer-events:none;opacity:.9">'+sg.sym+'</text>';
+    o+='<text x="'+lp[0]+'" y="'+lp[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+accC+'" font-size="6" font-family="var(--fa)" font-weight="700" style="pointer-events:none">'+sg.lb+'</text>';
+    var thC=isL()?"rgba(27,23,13,.5)":"rgba(180,170,150,.45)";
+    o+='<text x="'+lp[0]+'" y="'+(lp[1]+7)+'" text-anchor="middle" dominant-baseline="central" fill="'+thC+'" font-size="3.6" style="pointer-events:none">'+sg.th+'</text>';
+    o+='<circle cx="'+bp[0]+'" cy="'+bp[1]+'" r="6" fill="'+accC+'" opacity=".78"/><text x="'+bp[0]+'" y="'+bp[1]+'" text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="4" font-weight="700" style="pointer-events:none">'+durH+'</text>';
+    var ss=segStatsToday(sg.id);
+    if(ss.possible>0&&ss.pct>0){
+      var dotP=pXY(cx,cy,Rc-4,md);
+      var doneColor=ss.pct>=1?(isL()?"#6d8f52":"#85aa78"):(isL()?sg.acL:sg.ac);
+      o+='<circle cx="'+dotP[0]+'" cy="'+dotP[1]+'" r="1.6" fill="'+doneColor+'" opacity=".85"/>';
+    }
+  });
+  // karahah
+  var kh=karahahM();
+  if(kh){
+    var khC=isL()?"rgba(180,60,60,.10)":"rgba(200,90,90,.12)";
+    var khS=isL()?"rgba(180,60,60,.32)":"rgba(200,90,90,.28)";
+    o+=drawS(cx,cy,Rc,kh[0],kh[1],'fill="'+khC+'" stroke="none" style="pointer-events:none"');
+    var kA1=mD(kh[0]),kA2=mD(kh[1]);
+    var ks=pXY(cx,cy,Rc-.5,kA1),ke=pXY(cx,cy,Rc-.5,kA2);
+    o+='<path d="M'+ks[0]+','+ks[1]+' A'+(Rc-.5)+','+(Rc-.5)+' 0 0 1 '+ke[0]+','+ke[1]+'" fill="none" stroke="'+khS+'" stroke-width="1" stroke-dasharray="1,1.2" style="pointer-events:none"/>';
+  }
+  // dividers
+  boundaries.forEach(function(bm){
+    var ba=mD(bm),p1=pXY(cx,cy,2.5,ba),p2=pXY(cx,cy,Rc,ba);
+    var divC=isL()?"rgba(26,22,10,.08)":"rgba(235,226,205,.08)";
+    o+='<line x1="'+p1[0]+'" y1="'+p1[1]+'" x2="'+p2[0]+'" y2="'+p2[1]+'" stroke="'+divC+'" stroke-width=".5" style="pointer-events:none"/>';
+  });
+  // sunrise
+  if(D.pt&&D.pt.Sunrise){
+    var srM=toM(D.pt.Sunrise),sa=mD(srM);
+    var srP=pXY(cx,cy,Rc+13,sa);
+    var srC=isL()?"#c48820":"#e0b050";
+    o+='<circle cx="'+srP[0]+'" cy="'+srP[1]+'" r="2.2" fill="'+srC+'" opacity=".9"/>';
+    [0,45,90,135,180,225,270,315].forEach(function(rayDeg){
+      var rA=rayDeg*Math.PI/180;
+      var r1=[srP[0]+Math.cos(rA)*2.8,srP[1]+Math.sin(rA)*2.8];
+      var r2=[srP[0]+Math.cos(rA)*4,srP[1]+Math.sin(rA)*4];
+      o+='<line x1="'+r1[0]+'" y1="'+r1[1]+'" x2="'+r2[0]+'" y2="'+r2[1]+'" stroke="'+srC+'" stroke-width=".45" opacity=".7"/>';
+    });
+    var srL=pXY(cx,cy,Rc+22,sa);
+    o+='<text x="'+srL[0]+'" y="'+srL[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+srC+'" font-size="3.3" font-family="var(--fd)" font-weight="600" letter-spacing=".5">'+D.pt.Sunrise+'</text>';
+  }
+  // night markers — ½ night + ⅓ last (with actual time values on clock)
+  var ni=calcNi();
+  var npC=isL()?"rgba(110,80,130,.6)":"rgba(168,140,196,.45)";
+  var npT=isL()?"rgba(110,80,130,.85)":"rgba(168,140,196,.75)";
+  if(ni.half){
+    var aH=mD(ni.half);
+    var hIn=pXY(cx,cy,Rc-1,aH),hOut=pXY(cx,cy,Ro+3,aH);
+    var hFrac=pXY(cx,cy,Ro+7.5,aH),hTime=pXY(cx,cy,Ro+13.5,aH);
+    o+='<line x1="'+hIn[0]+'" y1="'+hIn[1]+'" x2="'+hOut[0]+'" y2="'+hOut[1]+'" stroke="'+npC+'" stroke-width=".5" stroke-dasharray="2,1.5"/>';
+    o+='<text x="'+hFrac[0]+'" y="'+hFrac[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+npC+'" font-size="3.3" font-family="var(--fd)" font-weight="500">½</text>';
+    o+='<text x="'+hTime[0]+'" y="'+hTime[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+npT+'" font-size="3" font-family="var(--fd)" font-weight="600" letter-spacing=".3">'+fH(ni.half)+'</text>';
+  }
+  if(ni.third){
+    var aT=mD(ni.third);
+    var tIn=pXY(cx,cy,Rc-1,aT),tOut=pXY(cx,cy,Ro+3,aT);
+    var tFrac=pXY(cx,cy,Ro+7.5,aT),tTime=pXY(cx,cy,Ro+13.5,aT);
+    o+='<line x1="'+tIn[0]+'" y1="'+tIn[1]+'" x2="'+tOut[0]+'" y2="'+tOut[1]+'" stroke="'+npC+'" stroke-width=".5" stroke-dasharray="2,1.5"/>';
+    o+='<text x="'+tFrac[0]+'" y="'+tFrac[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+npC+'" font-size="3.3" font-family="var(--fd)" font-weight="500">⅓</text>';
+    o+='<text x="'+tTime[0]+'" y="'+tTime[1]+'" text-anchor="middle" dominant-baseline="central" fill="'+npT+'" font-size="3" font-family="var(--fd)" font-weight="600" letter-spacing=".3">'+fH(ni.third)+'</text>';
+  }
+  // hour ticks
+  for(var h=0;h<24;h++){
+    var ha=mD(h*60),hp1=pXY(cx,cy,Rc-.3,ha),hp2=pXY(cx,cy,Rc+2,ha);
+    o+='<line x1="'+hp1[0]+'" y1="'+hp1[1]+'" x2="'+hp2[0]+'" y2="'+hp2[1]+'" stroke="'+(h%6===0?"var(--gold-line)":"var(--tx4)")+'" stroke-width="'+(h%6===0?".5":".25")+'"/>';
+    if(h%3===0){var ht=pXY(cx,cy,Rc+7,ha);o+='<text x="'+ht[0]+'" y="'+ht[1]+'" text-anchor="middle" dominant-baseline="central" fill="var(--tx3)" font-size="5.2" font-family="var(--fd)" font-weight="500">'+(h<10?"0"+h:h)+'</text>'}
+  }
+  // hand
+  var ca=mD(ch),tip=pXY(cx,cy,Rc*.84,ca),b1=pXY(cx,cy,2.5,ca-90),b2=pXY(cx,cy,2.5,ca+90);
+  var handC=isL()?"rgba(168,58,52,.8)":"rgba(200,70,70,.75)";
+  o+='<polygon points="'+tip[0]+","+tip[1]+" "+b1[0]+","+b1[1]+" "+b2[0]+","+b2[1]+'" fill="'+handC+'" style="filter:drop-shadow(0 0 3px '+handC+'60)"/>';
+  o+='<circle cx="'+cx+'" cy="'+cy+'" r="2.8" fill="var(--clock-bg)" stroke="'+handC+'66" stroke-width=".6"/><circle cx="'+cx+'" cy="'+cy+'" r=".9" fill="'+handC+'"/>';
+  o+='<circle cx="'+cx+'" cy="'+cy+'" r="7" fill="var(--clock-bg)" stroke="var(--line)" stroke-width=".3"/>';
+  o+='</svg>';
+  o+='<div class="clock-cap">today<span class="c-pct">'+todayPct+'%</span></div>';
+  o+='</div>';
+  return o;
+}
+
+function sortedSunIdx(segId){
+  var list=D.suns[segId]||[];
+  var undone=[],done=[];
+  list.forEach(function(it,idx){if(isDone("sun",segId,idx))done.push(idx);else undone.push(idx)});
+  return undone.concat(done);
+}
+
+function renderSunList(segId,suns,subs){
+  var o='';
+  if(suns.length===0){
+    o+='<div class="empty"><b>ยังไม่มีซุนนะฮ์ในช่วงนี้</b>กดปุ่ม + เพื่อเพิ่มรายการที่ต้องการติดตามเป็นนิสัย</div>';
+    return o;
+  }
+  var order=sortedSunIdx(segId);
+
+  o+='<div class="sun-list">';
+  order.forEach(function(idx){
+    var it=suns[idx];if(!it)return;
+    var done=isDone("sun",segId,idx);
+    var subObj=it.sub?subs.find(function(s){return s.id===it.sub}):null;
+    var itemKey="sun_"+segId+"_"+idx;
+    var menuOn=D.menuOpen===itemKey;
+    var editOn=D.editOpen===itemKey;
+
+    o+='<div class="sun-item'+(done?" done":"")+'" onclick="tglDone(\'sun\',\''+segId+'\','+idx+')">';
+    o+='<span class="s-ck">'+(done?"✓":"")+'</span>';
+    o+='<div class="s-bd">';
+    o+='<div class="s-tx">'+esc(it.t);
+    if(subObj)o+='<span class="s-tag">'+esc(subObj.n)+'</span>';
+    o+='</div>';
+    if(it.h)o+='<div class="s-h-tg" onclick="event.stopPropagation();D.hRef[\''+itemKey+'\']=!D.hRef[\''+itemKey+'\'];render()">'+(D.hRef[itemKey]?"▾ ":"▸ ")+esc(it.h)+'</div>';
+    o+='</div>';
+    o+='<button class="s-mn'+(menuOn?" on":"")+'" onclick="event.stopPropagation();tglMenu(\''+itemKey+'\')" title="เมนู">⋯</button>';
+    o+='</div>';
+
+    if(editOn){
+      o+='<div class="s-edit" onclick="event.stopPropagation()">';
+      o+='<input type="text" placeholder="ชื่อซุนนะฮ์..." value="'+esc(D.editT)+'" oninput="D.editT=this.value">';
+      o+='<input type="text" placeholder="อ้างอิง (เช่น บุคอรี 123)" value="'+esc(D.editH)+'" oninput="D.editH=this.value">';
+      o+='<select onchange="D.editSub=this.value"><option value="">— ไม่มีกิจกรรมย่อย —</option>';
+      subs.forEach(function(s){o+='<option value="'+s.id+'"'+(D.editSub===s.id?" selected":"")+'>'+esc(s.n)+'</option>'});
+      o+='</select>';
+      o+='<div class="s-edit-row">';
+      o+='<button class="s-act-btn" onclick="cancelEdit()">ยกเลิก</button>';
+      o+='<button class="s-act-btn save" onclick="saveEdit(\'sun\',\''+segId+'\','+idx+')">บันทึก</button>';
+      o+='</div>';
+      o+='</div>';
+    } else if(menuOn){
+      o+='<div class="s-actions" onclick="event.stopPropagation()">';
+      o+='<button class="s-act-btn" onclick="startEdit(\'sun\',\''+segId+'\','+idx+')"><span class="sa-ic">✎</span>แก้ไข</button>';
+      o+='<button class="s-act-btn del" onclick="rmSun(\''+segId+'\','+idx+')"><span class="sa-ic">×</span>ลบ</button>';
+      o+='</div>';
+    }
+  });
+  o+='</div>';
+  return o;
+}
+
+function renderDuaBlock(segId,duas){
+  var o='';
+  if(duas.length===0){
+    o+='<div class="empty"><b>ยังไม่มีดุอาอ์ในช่วงนี้</b>กดปุ่ม + เพื่อเพิ่มดุอาอ์ที่อ่านประจำในช่วงนี้</div>';
+    return o;
+  }
+  var duaIdx=D.duaIdx[segId]||0;
+  if(duaIdx>=duas.length)duaIdx=0;
+  var dua=duas[duaIdx];
+  var duaDone=isDone("dua",segId,duaIdx);
+  var itemKey="dua_"+segId+"_"+duaIdx;
+  var menuOn=D.menuOpen===itemKey;
+  var editOn=D.editOpen===itemKey;
+
+  o+='<div class="dua-blk">';
+  o+='<div class="dua-tools">';
+  o+='<button class="s-mn'+(menuOn?" on":"")+'" onclick="tglMenu(\''+itemKey+'\')" title="เมนู">⋯</button>';
+  o+='</div>';
+  o+='<div class="dua-ar">'+esc(dua.ar)+'</div>';
+  if(dua.tl)o+='<div class="dua-tl">'+esc(dua.tl)+'</div>';
+  if(dua.mn)o+='<div class="dua-mn">'+esc(dua.mn)+'</div>';
+  o+='<div class="dua-check'+(duaDone?" done":"")+'" onclick="tglDone(\'dua\',\''+segId+'\','+duaIdx+')">';
+  o+='<span class="dc-ic">'+(duaDone?"✓":"")+'</span>';
+  o+='<span>'+(duaDone?"อ่านแล้ว":"เช็คเมื่ออ่าน")+'</span>';
+  o+='</div>';
+  if(duas.length>1){
+    o+='<div class="dua-nav">';
+    o+='<button class="nav-arr" onclick="navDua(\''+segId+'\',-1)">‹</button>';
+    duas.forEach(function(_,i){o+='<span class="nav-dot'+(i===duaIdx?" on":"")+'" onclick="setDuaIdx(\''+segId+'\','+i+')"></span>'});
+    o+='<button class="nav-arr" onclick="navDua(\''+segId+'\',1)">›</button>';
+    o+='</div>';
+  }
+  o+='</div>';
+
+  if(editOn){
+    o+='<div class="s-edit">';
+    o+='<input type="text" class="ar-in" placeholder="نَصّ الدُّعَاء" value="'+esc(D.editAr)+'" oninput="D.editAr=this.value">';
+    o+='<input type="text" placeholder="คำอ่าน (optional)" value="'+esc(D.editTl)+'" oninput="D.editTl=this.value">';
+    o+='<input type="text" placeholder="คำแปล (optional)" value="'+esc(D.editMn)+'" oninput="D.editMn=this.value">';
+    o+='<div class="s-edit-row">';
+    o+='<button class="s-act-btn" onclick="cancelEdit()">ยกเลิก</button>';
+    o+='<button class="s-act-btn save" onclick="saveEdit(\'dua\',\''+segId+'\','+duaIdx+')">บันทึก</button>';
+    o+='</div>';
+    o+='</div>';
+  } else if(menuOn){
+    o+='<div class="s-actions">';
+    o+='<button class="s-act-btn" onclick="startEdit(\'dua\',\''+segId+'\','+duaIdx+')"><span class="sa-ic">✎</span>แก้ไข</button>';
+    o+='<button class="s-act-btn del" onclick="rmDua(\''+segId+'\','+duaIdx+')"><span class="sa-ic">×</span>ลบ</button>';
+    o+='</div>';
+  }
+  return o;
+}
+
+function getFocusHint(vs){
+  var ss=segStatsToday(vs.id);
+  if(ss.possible===0)return null;
+  var pct=Math.round(ss.pct*100);
+  if(ss.pct>=1)return{tx:"ครบช่วง"+vs.th+" · MashaAllah",pct:pct};
+  var remaining=ss.possible-ss.done;
+  if(ss.pct===0)return{tx:"เหลือ "+remaining+" รายการในช่วงนี้",pct:0};
+  return{tx:"เหลือ "+remaining+" รายการ",pct:pct};
+}
+
+// ═════════════════ INLINE ADD SHEET ═════════════════
+function renderAddSheet(){
+  var mode=D.addSheetMode;
+  var o='<div class="add-sheet">';
+  var segList=SEG.map(function(s){return'<option value="'+s.id+'"'+(D.qaSeg===s.id?" selected":"")+'>'+esc(s.sym+" "+s.th)+'</option>'}).join("");
+
+  if(mode==="sunnah"){
+    o+='<h3>✦ เพิ่มซุนนะฮ์</h3>';
+    o+='<div class="add-sub">สิ่งที่ต้องการติดตามเป็นนิสัย</div>';
+    o+='<div class="add-sheet-form">';
+    o+='<label>ชื่อซุนนะฮ์</label>';
+    o+='<input type="text" placeholder="เช่น ละหมาดซุนนะฮ์ก่อน..." value="'+esc(D.qaT)+'" oninput="D.qaT=this.value" autofocus>';
+    o+='<label>อ้างอิง (optional)</label>';
+    o+='<input type="text" placeholder="เช่น บุคอรี 123" value="'+esc(D.qaTl)+'" oninput="D.qaTl=this.value">';
+    o+='<label>ช่วงเวลา</label>';
+    o+='<select onchange="D.qaSeg=this.value;render()">'+segList+'</select>';
+    var subList=D.qaSeg?(D.segSubs[D.qaSeg]||[]):[];
+    if(subList.length){
+      o+='<label>กิจกรรมย่อย (optional)</label>';
+      o+='<select onchange="D.qaSub=this.value"><option value="">— ไม่มี —</option>';
+      subList.forEach(function(s){o+='<option value="'+s.id+'"'+(D.qaSub===s.id?" selected":"")+'>'+esc(s.n)+'</option>'});
+      o+='</select>';
+    }
+    o+='<div class="btn-row">';
+    o+='<button class="cancel" onclick="closeAddSheet()">ยกเลิก</button>';
+    o+='<button class="save" onclick="addSunnahFromFab()">+ เพิ่มซุนนะฮ์</button>';
+    o+='</div></div>';
+  }
+  else if(mode==="dua"){
+    o+='<h3>❖ เพิ่มดุอาอ์</h3>';
+    o+='<div class="add-sub">บทดุอาอ์ประจำช่วงเวลา</div>';
+    o+='<div class="add-sheet-form">';
+    o+='<label>ข้อความอาหรับ</label>';
+    o+='<input type="text" class="ar-in" placeholder="نَصّ الدُّعَاء" value="'+esc(D.qaT)+'" oninput="D.qaT=this.value">';
+    o+='<label>คำอ่าน (optional)</label>';
+    o+='<input type="text" placeholder="Transliteration" value="'+esc(D.qaTl)+'" oninput="D.qaTl=this.value">';
+    o+='<label>คำแปล (optional)</label>';
+    o+='<input type="text" placeholder="ความหมายภาษาไทย" value="'+esc(D.qaMn)+'" oninput="D.qaMn=this.value">';
+    o+='<label>ช่วงเวลา</label>';
+    o+='<select onchange="D.qaSeg=this.value">'+segList+'</select>';
+    o+='<div class="btn-row">';
+    o+='<button class="cancel" onclick="closeAddSheet()">ยกเลิก</button>';
+    o+='<button class="save" onclick="addDuaFromFab()">+ เพิ่มดุอาอ์</button>';
+    o+='</div></div>';
+  }
+  else if(mode==="activity"){
+    o+='<h3>◉ เพิ่มกิจกรรม</h3>';
+    o+='<div class="add-sub">กิจกรรมประจำวันบนวงนาฬิกา</div>';
+    o+='<div class="add-sheet-form">';
+    o+='<label>ชื่อกิจกรรม</label>';
+    o+='<input type="text" placeholder="เช่น นอนหลับ" value="'+esc(D.actN)+'" oninput="D.actN=this.value" autofocus>';
+    o+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">';
+    o+='<div><label>เริ่ม</label><input type="time" value="'+D.actS+'" onchange="D.actS=this.value"></div>';
+    o+='<div><label>สิ้นสุด</label><input type="time" value="'+D.actE+'" onchange="D.actE=this.value"></div>';
+    o+='</div>';
+    o+='<label>สี</label>';
+    o+='<div class="col-row" style="padding:5px 0">';
+    COLS.forEach(function(c){o+='<div class="col-chip'+(D.actC===c?" sel":"")+'" style="background:'+c+'" onclick="D.actC=\''+c+'\';render()"></div>'});
+    o+='</div>';
+    o+='<div class="btn-row">';
+    o+='<button class="cancel" onclick="closeAddSheet()">ยกเลิก</button>';
+    o+='<button class="save" onclick="addActFromFab()">+ เพิ่มกิจกรรม</button>';
+    o+='</div></div>';
+  }
+  o+='</div>';
+  return o;
+}
+
+// ═════════════════ PAGE: BRIEF (Summary) ═════════════════
+function renderBrief(){
+  var o=pageHdr("مُلَخَّصُ اليَوْم","SUMMARY · สรุปวันนี้");
+  var dk=dateKey();
+  var ds=dayStats(dk);
+  var pct=Math.round(ds.pct*100);
+
+  // Hero
+  var greeting=getGreeting();
+  var msg=getBriefMsg(ds.pct);
+  o+='<div class="br-hero">';
+  o+='<div class="br-eyebrow">'+greeting+' · TODAY</div>';
+  o+='<div class="br-main">';
+  o+='<div class="br-big">'+pct+'<span class="br-big-u">%</span></div>';
+  o+='<div class="br-desc">'+msg+'</div>';
+  o+='</div>';
+  o+='<div class="br-prog"><div class="br-prog-f" style="width:'+pct+'%"></div></div>';
+  o+='<div class="br-meta">';
+  o+='<span><b>'+ds.sun+'</b>ซุนนะฮ์</span>';
+  o+='<span><b>'+ds.dua+'</b>ดุอาอ์</span>';
+  o+='<span><b>'+(ds.possible-ds.done)+'</b>เหลือ</span>';
+  o+='</div>';
+  o+='</div>';
+
+  // Done
+  var doneItems=collectDoneItems(dk);
+  o+='<div class="br-sec">';
+  o+='<div class="br-sec-hd"><div class="br-sec-ttl"><span class="br-sec-ic">✓</span>ทำแล้ววันนี้</div><div class="br-sec-ct mat">'+doneItems.length+' รายการ</div></div>';
+  if(doneItems.length===0){
+    o+='<div class="br-empty">— ยังไม่มีรายการที่ทำวันนี้ —<br>เริ่มต้นช่วง'+curSeg().th+'ได้เลย</div>';
+  } else {
+    o+='<div class="br-list">';
+    doneItems.forEach(function(x){
+      o+='<div class="br-row done" onclick="jumpToSeg(\''+x.segId+'\')">';
+      o+='<span class="br-row-ck">✓</span>';
+      o+='<span class="br-row-seg">'+x.sg.sym+'</span>';
+      o+='<span class="br-row-tx">'+esc(x.label)+'</span>';
+      o+='<span class="br-row-tag">'+esc(x.sg.th)+'</span>';
+      o+='</div>';
+    });
+    o+='</div>';
+  }
+  o+='</div>';
+
+  // Remaining
+  var remaining=collectRemainingItems(dk);
+  o+='<div class="br-sec">';
+  o+='<div class="br-sec-hd"><div class="br-sec-ttl"><span class="br-sec-ic">○</span>เหลือต้องทำ</div><div class="br-sec-ct rose">'+remaining.length+' รายการ</div></div>';
+  if(remaining.length===0){
+    o+='<div class="br-empty">✓ ครบถ้วนแล้ววันนี้ · MashaAllah</div>';
+  } else {
+    o+='<div class="br-list">';
+    remaining.forEach(function(x){
+      var tagCls=x.urgent?"hot":"";
+      var tagTx=x.urgent?"ช่วงนี้":x.sg.th;
+      o+='<div class="br-row" onclick="jumpToSeg(\''+x.segId+'\')">';
+      o+='<span class="br-row-ck"></span>';
+      o+='<span class="br-row-seg">'+x.sg.sym+'</span>';
+      o+='<span class="br-row-tx">'+esc(x.label)+'</span>';
+      o+='<span class="br-row-tag '+tagCls+'">'+esc(tagTx)+'</span>';
+      o+='</div>';
+    });
+    o+='</div>';
+  }
+  o+='</div>';
+
+  // Tomorrow
+  var tmr=getTomorrowPreview();
+  o+='<div class="br-sec">';
+  o+='<div class="br-sec-hd"><div class="br-sec-ttl"><span class="br-sec-ic">→</span>พรุ่งนี้</div><div class="br-sec-ct">'+tmr.dow+'</div></div>';
+  o+='<div class="br-tmr">';
+  if(tmr.specials.length===0){
+    o+='<div class="br-tmr-row"><span class="br-tmr-ic">◯</span><div class="br-tmr-bd"><div class="br-tmr-th">วันปกติ · ตั้งต้นที่ศุบฮ์</div></div></div>';
+  } else {
+    tmr.specials.forEach(function(s){
+      o+='<div class="br-tmr-row"><span class="br-tmr-ic">'+s.ic+'</span><div class="br-tmr-bd"><div class="br-tmr-ar">'+s.ar+'</div><div class="br-tmr-th">'+esc(s.th)+'</div></div></div>';
+    });
+  }
+  if(D.pt&&D.pt.Fajr){
+    o+='<div class="br-tmr-row"><span class="br-tmr-ic">✦</span><div class="br-tmr-bd"><div class="br-tmr-ar">الفَجْر</div><div class="br-tmr-th">เริ่มวันด้วยศุบฮ์ <span class="br-tmr-time">'+D.pt.Fajr+'</span></div></div></div>';
+  }
+  o+='</div>';
+  o+='</div>';
+  return o;
+}
+
+function pageHdr(ar,th){
+  return '<div class="page-hdr"><button class="page-back" onclick="goView(\'home\')">‹</button><div class="page-hdr-ttl"><div class="page-hdr-ar">'+ar+'</div><div class="page-hdr-th">'+esc(th)+'</div></div></div>';
+}
+
+function collectDoneItems(dk){
+  var arr=[];
+  SEG.forEach(function(sg){
+    (D.suns[sg.id]||[]).forEach(function(it,i){
+      if(D.todayDone[dk+"_sun_"+sg.id+"_"+i])arr.push({segId:sg.id,sg:sg,type:"sun",idx:i,label:it.t});
+    });
+    (D.duas[sg.id]||[]).forEach(function(it,i){
+      if(D.todayDone[dk+"_dua_"+sg.id+"_"+i])arr.push({segId:sg.id,sg:sg,type:"dua",idx:i,label:"ดุอาอ์ · "+(it.mn||it.tl||"").slice(0,25)});
+    });
+  });
+  return arr;
+}
+function collectRemainingItems(dk){
+  var arr=[],cs=curSeg();
+  var csIdx=SEG.findIndex(function(s){return s.id===cs.id});
+  var order=[];
+  for(var i=0;i<SEG.length;i++)order.push(SEG[(csIdx+i)%SEG.length]);
+  order.forEach(function(sg,ord){
+    (D.suns[sg.id]||[]).forEach(function(it,i){
+      if(!D.todayDone[dk+"_sun_"+sg.id+"_"+i])arr.push({segId:sg.id,sg:sg,type:"sun",idx:i,label:it.t,urgent:ord===0});
+    });
+    (D.duas[sg.id]||[]).forEach(function(it,i){
+      if(!D.todayDone[dk+"_dua_"+sg.id+"_"+i])arr.push({segId:sg.id,sg:sg,type:"dua",idx:i,label:"ดุอาอ์ประจำช่วง",urgent:ord===0});
+    });
+  });
+  return arr;
+}
+function getTomorrowPreview(){
+  var d=new Date();d.setDate(d.getDate()+1);
+  var wd=d.getDay();
+  var dowName=DOW_FULL[wd];
+  var specials=[];
+  if(wd===5)specials.push({ic:"❖",ar:"يَوْمُ الجُمُعَة",th:"วันศุกร์ · อ่านอัลกะฮ์ฟิ + ดุอาอ์บ่าย"});
+  if(wd===1||wd===4){var dn=wd===1?"จันทร์":"พฤหัส";specials.push({ic:"☪",ar:"صَوْمُ الاثْنَيْنِ وَالخَمِيس",th:"ซุนนะฮ์ถือศีลอดวัน"+dn})}
+  if(D.hj){
+    var hd=hijriToday()+1;
+    if(hd>=13&&hd<=15)specials.push({ic:"◯",ar:"الأَيَّامُ البِيض · "+hd,th:"วันสีขาว · ซุนนะฮ์ถือศีลอด"});
+    if(D.hj.month&&D.hj.month.number===12&&hd===9)specials.push({ic:"✦",ar:"يَوْمُ عَرَفَة",th:"วันอะร็อฟะฮ์ · ซุนนะฮ์ถือศีลอด"});
+  }
+  return{dow:dowName,specials:specials};
+}
+function getGreeting(){
+  var cs=curSeg();
+  var g={before_fajr:"قَبْلَ الفَجْر",fajr:"صَبَاح الخَيْر",duha:"الضُّحَى",dhuhr:"بَارَك الله",asr:"عَصْر سَعِيد",maghrib:"مَسَاء النُّور",isha:"لَيْلَة مُبَارَكَة"};
+  return g[cs.id]||"Assalāmu ʿalaykum";
+}
+function getBriefMsg(p){
+  if(p===0)return"เริ่มต้นวันด้วย <b>นิยะฮ์</b> · มีรายการรอที่ช่วง"+curSeg().th;
+  if(p<.25)return"เริ่มแล้ว · ค่อยๆ เก็บไปทีละรายการ";
+  if(p<.5)return"ไปต่อได้ดี · <b>เก็บให้ครบ</b>ในช่วงนี้";
+  if(p<.75)return"ใกล้แล้ว · เหลืออีกไม่กี่รายการ";
+  if(p<1)return"<b>เกือบครบ</b> · อย่าลืมดุอาอ์ปิดวัน";
+  return"<b>ครบถ้วน · MashaAllah</b> · รักษานิสัยต่อพรุ่งนี้";
+}
+function jumpToSeg(segId){
+  D.act=segId;D.view="home";
+  render();
+  setTimeout(function(){var panel=document.querySelector(".panel");if(panel)window.scrollTo({top:panel.offsetTop-80,behavior:"smooth"})},50);
+}
+
+// ═════════════════ PAGE: ACTIVITIES ═════════════════
+function renderAct(){
+  var o=pageHdr("الأَنْشِطَة","ACTIVITIES · กิจกรรมประจำวัน");
+  if(D.activities.length===0){
+    o+='<div class="empty"><b>ยังไม่มีกิจกรรมประจำวัน</b>เพิ่มกิจกรรมที่ทำเป็นประจำ (นอน · เรียน · ทำงาน) เพื่อให้แสดงผลบนนาฬิกาหลัก</div>';
+  }
+
+  D.activities.forEach(function(a,i){
+    var dur=toM(a.e)-toM(a.s);if(dur<=0)dur+=1440;
+    var editing=D.actEditId===i;
+    if(!editing){
+      o+='<div class="act-card" style="--ac-color:'+a.c+'">';
+      o+='<span class="ac-dot" style="background:'+a.c+'"></span>';
+      o+='<div class="ac-main">';
+      o+='<div class="ac-n">'+esc(a.n)+'</div>';
+      o+='<div class="ac-t">'+a.s+' – '+a.e+' <span style="color:var(--tx4)">·</span> <span class="ac-d">'+fDurTh(dur)+'</span></div>';
+      o+='</div>';
+      o+='<div class="ac-actions">';
+      o+='<button class="ac-mn" onclick="startActEdit('+i+')" aria-label="แก้ไข">✎</button>';
+      o+='<button class="ac-mn" onclick="rmAct('+i+')" aria-label="ลบ">×</button>';
+      o+='</div>';
+      o+='</div>';
+    } else {
+      o+='<div class="act-form">';
+      o+='<input type="text" placeholder="ชื่อกิจกรรม..." value="'+esc(D.actEditN)+'" oninput="D.actEditN=this.value">';
+      o+='<div style="display:flex;gap:6px;align-items:center">';
+      o+='<input type="time" value="'+D.actEditS+'" onchange="D.actEditS=this.value" style="flex:1">';
+      o+='<span style="color:var(--tx3);font-size:10px">→</span>';
+      o+='<input type="time" value="'+D.actEditE+'" onchange="D.actEditE=this.value" style="flex:1">';
+      o+='</div>';
+      o+='<div class="col-row">';
+      COLS.forEach(function(c){o+='<div class="col-chip'+(D.actEditC===c?" sel":"")+'" style="background:'+c+'" onclick="D.actEditC=\''+c+'\';render()"></div>'});
+      o+='</div>';
+      o+='<div style="display:flex;gap:6px;justify-content:flex-end">';
+      o+='<button class="act-btn x" onclick="D.actEditId=null;render()">ยกเลิก</button>';
+      o+='<button class="act-btn" onclick="saveActEdit('+i+')">บันทึก</button>';
+      o+='</div></div>';
+    }
+  });
+  o+='<button class="add-trig" onclick="openAdd(\'activity\')">+ เพิ่มกิจกรรม</button>';
+  return o;
+}
+
+// ═════════════════ PAGE: STATS ═════════════════
+function renderStats(){
+  var o=pageHdr("الإِحْصَائِيَّات","STATS · ติดตามนิสัย");
+  // Period toggle
+  o+='<div class="period-tog">';
+  [["week","สัปดาห์"],["month","เดือน"],["year","ปี"]].forEach(function(p){
+    o+='<button class="period-btn'+(D.statPeriod===p[0]?" on":"")+'" onclick="setPeriod(\''+p[0]+'\')">'+esc(p[1])+'</button>';
+  });
+  o+='</div>';
+
+  // Segment filter pills
+  o+='<div class="seg-filter">';
+  o+='<button class="sf-pill'+(D.statFilterSeg===null?" on":"")+'" onclick="D.statFilterSeg=null;render()"><span class="sf-sym">◇</span>ทั้งหมด</button>';
+  SEG.forEach(function(sg){
+    o+='<button class="sf-pill'+(D.statFilterSeg===sg.id?" on":"")+'" onclick="D.statFilterSeg=\''+sg.id+'\';render()"><span class="sf-sym">'+sg.sym+'</span>'+esc(sg.th)+'</button>';
+  });
+  o+='</div>';
+
+  if(D.statPeriod==="week")o+=buildWeekView();
+  else if(D.statPeriod==="month")o+=buildMonthView();
+  else o+=buildYearView();
+
+  // Collapsible sections
+  o+=buildSegPerfSection();
+  o+=buildItemPerfSection();
+
+  return o;
+}
+
+function buildWeekView(){
+  var o='';
+  var now=new Date();
+  var weekDKs=[];
+  for(var i=6;i>=0;i--){
+    var d=new Date();d.setDate(now.getDate()-i);
+    weekDKs.push({dk:dateKey(d),date:new Date(d),dow:d.getDay(),dn:d.getDate()});
+  }
+  var ps=periodStats(weekDKs.map(function(x){return x.dk}),D.statFilterSeg);
+  var avgDayPct=ps.dayPcts.length?ps.dayPcts.reduce(function(a,b){return a+b},0)/ps.dayPcts.length:0;
+  var activeDays=ps.dayPcts.filter(function(p){return p>=.5}).length;
+
+  o+='<div class="wk-list">';
+  weekDKs.forEach(function(d){
+    var ds=D.statFilterSeg?segDayStats(D.statFilterSeg,d.dk):dayStats(d.dk);
+    var pct=Math.round(ds.pct*100);
+    var isToday=d.dk===dateKey();
+    var hasNote=D.notes[d.dk];
+    var barColor=pct===0?"var(--line2)":pct>=100?"var(--matcha)":pct>=70?"var(--matcha-warm)":pct>=40?"var(--gold)":"var(--rose-warm)";
+    o+='<div class="wk-row'+(isToday?" today":"")+'" onclick="openDayDetail(\''+d.dk+'\')">';
+    o+='<div class="wk-d"><div class="wk-dow">'+DOW_TH[d.dow]+'</div><div class="wk-dn">'+d.dn+'</div></div>';
+    o+='<div class="wk-bar"><div class="wk-bar-f" style="width:'+pct+'%;background:'+barColor+'"></div></div>';
+    if(hasNote)o+='<span class="wk-nt-ic" title="มีโน้ต">✎</span>';
+    o+='<div class="wk-pct">'+pct+'%</div>';
+    o+='</div>';
+  });
+  o+='</div>';
+
+  // Compact summary below week list
+  o+='<div class="st-summary">';
+  o+='<div class="st-sum-row">';
+  o+='<div class="st-sum-cell"><div class="st-sum-v">'+Math.round(avgDayPct*100)+'<span class="st-sum-u">%</span></div><div class="st-sum-l">เฉลี่ย/วัน</div></div>';
+  o+='<div class="st-sum-cell"><div class="st-sum-v">'+activeDays+'<span class="st-sum-u">/7</span></div><div class="st-sum-l">วัน active</div></div>';
+  o+='<div class="st-sum-cell"><div class="st-sum-v">'+ps.done+'</div><div class="st-sum-l">ทำทั้งหมด</div></div>';
+  o+='<div class="st-sum-cell"><div class="st-sum-v">'+(ps.possible-ps.done)+'</div><div class="st-sum-l">พลาด</div></div>';
+  o+='</div>';
+  o+='</div>';
+
+  if(D.statSelDate)o+=buildDayDetail(D.statSelDate);
+  return o;
+}
+
+function buildMonthView(){
+  var o='';
+  var now=new Date();
+  var viewY=now.getFullYear(),viewM=now.getMonth()+D.statMonthOff;
+  while(viewM<0){viewM+=12;viewY--}
+  while(viewM>11){viewM-=12;viewY++}
+  var daysInMonth=new Date(viewY,viewM+1,0).getDate();
+  var monthDKs=[];
+  for(var d=1;d<=daysInMonth;d++)monthDKs.push(dateKeyOf(viewY,viewM,d));
+  var ps=periodStats(monthDKs,D.statFilterSeg);
+  var avgDayPct=ps.dayPcts.length?ps.dayPcts.reduce(function(a,b){return a+b},0)/ps.dayPcts.length:0;
+  var st=streaks(0.5);
+  var activeDays=ps.dayPcts.filter(function(p){return p>=.5}).length;
+
+  // ═══ CALENDAR FIRST ═══
+  o+='<div class="cal-wrap">';
+  o+='<div class="cal-nav">';
+  o+='<button class="cal-nav-btn" onclick="navMonth(-1)" aria-label="เดือนก่อน">‹</button>';
+  o+='<div class="cal-title">'+MONTH_TH[viewM]+' '+viewY+(D.hj&&D.statMonthOff===0?'<div class="ct-hj">'+esc(D.hj.month.ar)+' '+esc(D.hj.year)+'هـ</div>':"")+'</div>';
+  o+='<button class="cal-nav-btn" onclick="navMonth(1)" aria-label="เดือนถัดไป"'+(D.statMonthOff>=0?" disabled":"")+'>›</button>';
+  o+='</div>';
+  o+='<div class="cal-dow">';
+  DOW_TH.forEach(function(d){o+='<div class="cal-dow-lbl">'+d+'</div>'});
+  o+='</div>';
+  o+='<div class="cal-grid">';
+  var firstDow=new Date(viewY,viewM,1).getDay();
+  for(var i=0;i<firstDow;i++)o+='<div class="cal-cell out"></div>';
+  var todayDk=dateKey();
+  for(var d2=1;d2<=daysInMonth;d2++){
+    var dk=dateKeyOf(viewY,viewM,d2);
+    var ds=D.statFilterSeg?segDayStats(D.statFilterSeg,dk):dayStats(dk);
+    var pct=ds.pct;
+    var bgCol,op;
+    if(ds.possible===0){bgCol="transparent";op=0}
+    else if(pct===0){bgCol="var(--line)";op=.5}
+    else if(pct<.25){bgCol="var(--rose)";op=.22}
+    else if(pct<.5){bgCol="var(--rose)";op=.4}
+    else if(pct<.75){bgCol="var(--gold)";op=.5}
+    else if(pct<1){bgCol="var(--matcha)";op=.65}
+    else{bgCol="var(--matcha)";op=.95}
+    var cls="cal-cell";
+    if(dk===todayDk)cls+=" today";
+    if(dk===D.statSelDate)cls+=" sel";
+    var hasNote=D.notes[dk];
+    var fMark=fastingSunnahMark(dk);
+    o+='<div class="'+cls+'" style="--pct-bg:'+bgCol+';--pct-op:'+op+'" onclick="selCalDate(\''+dk+'\')" title="'+(fMark?fMark.title:"")+'">';
+    if(fMark)o+='<span class="cc-fast '+fMark.cls+'">'+fMark.label+'</span>';
+    o+='<span class="cc-n">'+d2+'</span>';
+    if(hasNote)o+='<div class="cc-nt"></div>';
+    o+='</div>';
+  }
+  o+='</div>';
+
+  // Legend — minimal, below grid
+  o+='<div class="cal-legend">';
+  o+='<span class="cl-scale"><span class="cl-lab">น้อย</span>';
+  ['rose .22','rose .4','gold .5','matcha .65','matcha .95'].forEach(function(spec){
+    var p=spec.split(" ");
+    o+='<span class="cl-sw" style="background:var(--'+p[0]+');opacity:'+p[1]+'"></span>';
+  });
+  o+='<span class="cl-lab">เต็ม</span></span>';
+  o+='<span class="cl-sep">·</span>';
+  o+='<span class="cl-item"><span class="cl-ic" style="color:var(--pp)">◯</span>สีขาว</span>';
+  o+='<span class="cl-item"><span class="cl-ic" style="color:var(--gold)">☪</span>จ/พฤ</span>';
+  o+='</div>';
+  o+='</div>';
+
+  // ═══ COMPACT STATS ROW (AFTER CALENDAR) ═══
+  if(D.statSelDate){
+    o+=buildDayDetail(D.statSelDate);
+  } else {
+    o+='<div class="st-summary">';
+    o+='<div class="st-sum-row">';
+    o+='<div class="st-sum-cell"><div class="st-sum-v">'+Math.round(avgDayPct*100)+'<span class="st-sum-u">%</span></div><div class="st-sum-l">เฉลี่ย/วัน</div></div>';
+    o+='<div class="st-sum-cell"><div class="st-sum-v">'+activeDays+'<span class="st-sum-u">/'+daysInMonth+'</span></div><div class="st-sum-l">วัน active</div></div>';
+    o+='<div class="st-sum-cell"><div class="st-sum-v">'+st.cur+'</div><div class="st-sum-l">ต่อเนื่อง</div></div>';
+    o+='<div class="st-sum-cell"><div class="st-sum-v">'+st.best+'</div><div class="st-sum-l">สูงสุด</div></div>';
+    o+='</div>';
+    o+='<div class="st-sum-sub">ทำ <b>'+ps.done+'</b> จาก <b>'+ps.possible+'</b> รายการในเดือนนี้</div>';
+    o+='</div>';
+  }
+
+  return o;
+}
+
+function buildYearView(){
+  var o='';
+  var now=new Date();
+  var viewY=now.getFullYear()+D.statYearOff;
+  var totDone=0,totPoss=0,monthData=[];
+  for(var m=0;m<12;m++){
+    var daysInM=new Date(viewY,m+1,0).getDate();
+    var dks=[];
+    for(var d=1;d<=daysInM;d++)dks.push(dateKeyOf(viewY,m,d));
+    var ps=periodStats(dks,D.statFilterSeg);
+    monthData.push({m:m,ps:ps,pct:ps.dayPcts.length?(ps.dayPcts.reduce(function(a,b){return a+b},0)/ps.dayPcts.length):0,activeDays:ps.dayPcts.filter(function(p){return p>=.5}).length});
+    totDone+=ps.done;totPoss+=ps.possible;
+  }
+  var yrAvg=totPoss?totDone/totPoss:0;
+  var activeMonths=monthData.filter(function(x){return x.pct>0}).length;
+  var bestMonth=monthData.reduce(function(b,x){return x.pct>b.pct?x:b},{pct:0,m:0});
+
+  // Year nav
+  o+='<div class="yr-wrap">';
+  o+='<div class="yr-nav">';
+  o+='<button class="cal-nav-btn" onclick="navYear(-1)" aria-label="ปีก่อน">‹</button>';
+  o+='<div class="yr-title">'+viewY+'</div>';
+  o+='<button class="cal-nav-btn" onclick="navYear(1)" aria-label="ปีถัดไป"'+(D.statYearOff>=0?" disabled":"")+'>›</button>';
+  o+='</div>';
+
+  // Ring grid — 4 cols × 3 rows = exactly 12 months
+  o+='<div class="yr-grid">';
+  monthData.forEach(function(x){
+    var pct=Math.round(x.pct*100);
+    var isCur=x.m===now.getMonth()&&viewY===now.getFullYear();
+    var ringCol=pct>=70?"var(--matcha)":pct>=40?"var(--gold)":pct>=15?"var(--rose-warm)":"var(--line3)";
+    var dashLen=Math.round(pct*1.005); // 0-100.5
+    var cls="yr-m"+(isCur?" cur":"")+(pct===0?" zero":"");
+    o+='<button class="'+cls+'" onclick="selMonth('+x.m+','+viewY+')">';
+    o+='<svg viewBox="0 0 40 40" class="yr-ring"><circle cx="20" cy="20" r="16" fill="none" stroke="var(--line2)" stroke-width="2"/><circle cx="20" cy="20" r="16" fill="none" stroke="'+ringCol+'" stroke-width="2" stroke-dasharray="'+dashLen+' 100.5" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg>';
+    o+='<div class="yr-m-inner"><div class="yr-m-v">'+pct+'<span class="yr-m-u">%</span></div></div>';
+    o+='<div class="yr-m-n">'+MONTH_SH[x.m]+'</div>';
+    o+='</button>';
+  });
+  o+='</div>';
+
+  // Summary row below grid
+  o+='<div class="yr-summary">';
+  o+='<div class="yr-sum-cell"><div class="yr-sum-v">'+Math.round(yrAvg*100)+'<span class="yr-sum-u">%</span></div><div class="yr-sum-l">เฉลี่ยทั้งปี</div></div>';
+  o+='<div class="yr-sum-cell"><div class="yr-sum-v">'+activeMonths+'<span class="yr-sum-u">/12</span></div><div class="yr-sum-l">เดือน active</div></div>';
+  if(bestMonth.pct>0){
+    o+='<div class="yr-sum-cell"><div class="yr-sum-v">'+MONTH_SH[bestMonth.m]+'</div><div class="yr-sum-l">เดือนเด่น '+Math.round(bestMonth.pct*100)+'%</div></div>';
+  }
+  o+='</div>';
+  o+='</div>';
+  return o;
+}
+
+function buildDayDetail(dk){
+  var o='';
+  var parts=dk.split("-");
+  var dObj=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  var ds=dayStats(dk);
+  var segBreak=SEG.map(function(sg){return{sg:sg,ss:segDayStats(sg.id,dk)}});
+  var hd=hijriDayFor(dk);
+  var fMark=fastingSunnahMark(dk);
+
+  o+='<div class="cal-detail" data-swipe-day="'+dk+'" ontouchstart="_swStart(event)" ontouchmove="_swMove(event)" ontouchend="_swEnd(event,\''+dk+'\')">';
+  o+='<div class="cd-hd">';
+  o+='<button class="cd-day-nav" onclick="navDetailDay(\''+dk+'\',-1)" title="วันก่อน">‹</button>';
+  o+='<div class="cd-hd-main"><div class="cd-date">'+DOW_FULL[dObj.getDay()]+' '+dObj.getDate()+' '+MONTH_TH[dObj.getMonth()]+'</div>';
+  if(hd)o+='<div class="cd-date-hj">'+hd+' '+(D.hj?esc(D.hj.month.ar):"")+'</div>';
+  o+='</div>';
+  o+='<div class="cd-mini-st"><div class="cd-mini"><div class="cd-mini-v">'+ds.done+"/"+ds.possible+'</div><div class="cd-mini-l">ครบ</div></div><div class="cd-mini"><div class="cd-mini-v">'+Math.round(ds.pct*100)+'%</div><div class="cd-mini-l">ทั้งวัน</div></div></div>';
+  var todayOnly=dk===dateKey();
+  if(todayOnly){
+    o+='<button class="cd-day-nav" disabled title="วันถัดไป">›</button>';
+  } else {
+    o+='<button class="cd-day-nav" onclick="navDetailDay(\''+dk+'\',1)" title="วันถัดไป">›</button>';
+  }
+  o+='</div>';
+
+  if(fMark){
+    o+='<div style="display:flex;align-items:center;gap:7px;padding:7px 11px;margin-bottom:10px;background:var(--gold-ghost);border:1px solid var(--gold-line);border-radius:8px">';
+    o+='<span style="font-family:var(--fa);color:'+(fMark.cls==="white"?"var(--pp)":"var(--gold)")+';font-size:13px">'+fMark.label+'</span>';
+    o+='<span style="font-size:10.5px;color:var(--tx);letter-spacing:.2px">'+esc(fMark.title)+'</span>';
+    o+='</div>';
+  }
+
+  o+='<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px">';
+  segBreak.forEach(function(x){
+    var pct=Math.round(x.ss.pct*100);
+    var h=Math.max(6,Math.round(pct*0.6));
+    o+='<div style="display:flex;flex-direction:column;align-items:center;gap:3px">';
+    o+='<div style="width:100%;height:54px;background:var(--card);border-radius:5px;position:relative;overflow:hidden;border:1px solid var(--line)">';
+    o+='<div style="position:absolute;bottom:0;left:0;right:0;height:'+h+'%;background:linear-gradient(180deg,'+segAc(x.sg)+","+segAc(x.sg)+'88);border-radius:0 0 4px 4px"></div>';
+    o+='</div>';
+    o+='<div style="font-family:var(--fa);font-size:10px;color:'+segAc(x.sg)+'">'+x.sg.sym+'</div>';
+    o+='<div style="font-family:var(--fd);font-size:8.5px;color:var(--tx2);font-variant-numeric:tabular-nums;letter-spacing:.3px">'+pct+'%</div>';
+    o+='</div>';
+  });
+  o+='</div>';
+
+  var subBreakdown=getDaySubBreakdown(dk);
+  if(subBreakdown.length>0){
+    o+='<div class="cd-note-lbl">กิจกรรมย่อยที่ทำ</div>';
+    o+='<div style="display:flex;flex-direction:column;gap:4px;margin-bottom:12px">';
+    subBreakdown.forEach(function(sb){
+      var pct=sb.total>0?Math.round(sb.done/sb.total*100):0;
+      var barCol=pct===100?"var(--matcha)":pct>=50?"var(--gold)":"var(--rose)";
+      o+='<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:10.5px">';
+      o+='<span style="font-family:var(--fa);color:'+segAc(sb.sg)+';font-size:11px;width:12px;text-align:center">'+sb.sg.sym+'</span>';
+      o+='<span style="font-family:var(--fa);color:var(--gold);font-size:12px">'+esc(sb.sub.ic)+'</span>';
+      o+='<span style="flex:1;color:var(--tx);letter-spacing:.2px">'+esc(sb.sub.n)+'</span>';
+      o+='<div style="width:46px;height:4px;background:var(--line);border-radius:3px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+barCol+';border-radius:3px"></div></div>';
+      o+='<span style="font-family:var(--fd);font-size:9.5px;color:var(--tx2);font-variant-numeric:tabular-nums;letter-spacing:.3px;min-width:34px;text-align:right">'+sb.done+"/"+sb.total+'</span>';
+      o+='</div>';
+    });
+    o+='</div>';
+  }
+
+  o+='<div class="cd-note-lbl">โน้ตวันนี้ · อุปสรรค · บทเรียน</div>';
+  var curNote=D.notes[dk]||"";
+  var displayNote=(D.noteDraft!==undefined&&D.noteDraft!==null)?D.noteDraft:curNote;
+  o+='<textarea class="cd-note" placeholder="บันทึกเหตุการณ์ อุปสรรค หรือสิ่งที่ได้เรียนรู้ในวันนี้..." oninput="D.noteDraft=this.value">'+esc(displayNote)+'</textarea>';
+  o+='<div class="cd-note-foot">';
+  var isDirty=displayNote!==curNote;
+  var saved=D.noteSaved===dk;
+  o+='<span class="cd-save-hint"'+(saved?' style="color:var(--matcha-deep);font-style:normal;font-weight:500"':"")+'>'+(saved?"✓ บันทึกเรียบร้อย":(isDirty?"• มีการเปลี่ยนแปลง":(curNote?"บันทึกแล้ว · "+curNote.length+" ตัวอักษร":"ยังไม่มีโน้ต")))+'</span>';
+  o+='<button class="act-btn x" onclick="D.statSelDate=null;render()">ปิด</button>';
+  o+='<button class="act-btn" onclick="saveNote(\''+dk+'\')">บันทึกโน้ต</button>';
+  o+='</div>';
+  o+='</div>';
+  return o;
+}
+
+function getDaySubBreakdown(dk){
+  var result=[];
+  SEG.forEach(function(sg){
+    var subs=D.segSubs[sg.id]||[];
+    subs.forEach(function(sub){
+      var total=0,done=0;
+      (D.suns[sg.id]||[]).forEach(function(it,i){
+        if(it.sub===sub.id){total++;if(D.todayDone[dk+"_sun_"+sg.id+"_"+i])done++}
+      });
+      (D.duas[sg.id]||[]).forEach(function(it,i){
+        if(it.sub===sub.id){total++;if(D.todayDone[dk+"_dua_"+sg.id+"_"+i])done++}
+      });
+      if(total>0)result.push({sg:sg,sub:sub,total:total,done:done});
+    });
+  });
+  return result;
+}
+
+// Collapsible: per-segment performance
+function buildSegPerfSection(){
+  var isOpen=D.statSegOpen["_segperf"]!==false; // default open
+  var o='<div class="st-sec'+(isOpen?" open":"")+'" data-statkey="_segperf">';
+  o+='<div class="st-sec-hd" onclick="tglStSec(\'_segperf\')">';
+  o+='<span class="st-sec-ic">◈</span>';
+  o+='<span class="st-sec-ttl">แต่ละช่วง · 30 วัน</span>';
+  o+='<span class="st-sec-ct">7 ช่วง</span>';
+  o+='<span class="st-sec-arr">⌄</span>';
+  o+='</div>';
+  o+='<div class="st-sec-bd">';
+  o+='<div class="sp-chart">';
+  SEG.forEach(function(sg){
+    var p=segPerf(sg.id,30);
+    var pct=Math.round(p*100);
+    var bCol=pct>=70?"var(--matcha)":pct>=40?"var(--gold)":"var(--rose)";
+    o+='<div class="sp-row">';
+    o+='<div class="sp-lbl"><span style="color:'+segAc(sg)+';margin-right:5px;font-family:var(--fa);font-size:11px">'+sg.sym+'</span>'+esc(sg.th)+'</div>';
+    o+='<div class="sp-bar"><div class="sp-fill" style="width:'+pct+'%;background:linear-gradient(90deg,'+bCol+"aa,"+bCol+')"></div></div>';
+    o+='<div class="sp-pct">'+pct+'%</div>';
+    o+='</div>';
+  });
+  o+='</div>';
+  o+='</div></div>';
+  return o;
+}
+
+// Collapsible: per-item performance — grouped by segment, ALL items shown
+function buildItemPerfSection(){
+  var o='';
+  // Build grouped data per segment (filtered)
+  var grouped=[];
+  SEG.forEach(function(sg){
+    if(D.statFilterSeg&&D.statFilterSeg!==sg.id)return;
+    var items=[];
+    (D.suns[sg.id]||[]).forEach(function(it,idx){
+      var p=itemPerf("sun",sg.id,idx,30);
+      items.push({type:"sun",sg:sg,it:it,idx:idx,pct:p.pct,hit:p.hit,cap:p.cap});
+    });
+    (D.duas[sg.id]||[]).forEach(function(it,idx){
+      var p=itemPerf("dua",sg.id,idx,30);
+      items.push({type:"dua",sg:sg,it:it,idx:idx,pct:p.pct,hit:p.hit,cap:p.cap,isDua:true});
+    });
+    if(items.length){
+      items.sort(function(a,b){return b.pct-a.pct});
+      grouped.push({sg:sg,items:items});
+    }
+  });
+
+  // Summary — 3 consistency tiers
+  var allItems=[];
+  grouped.forEach(function(g){allItems=allItems.concat(g.items)});
+  if(allItems.length===0)return "";
+
+  // Overview: top 5, mid, low
+  var sortedAll=allItems.slice().sort(function(a,b){return b.pct-a.pct});
+  var top=sortedAll.slice(0,5);
+  var low=sortedAll.filter(function(x){return x.pct<0.5}).slice(-5).reverse();
+
+  // TOP section
+  var topOpen=D.statSegOpen["_top"]!==false;
+  o+='<div class="st-sec'+(topOpen?" open":"")+'" data-statkey="_top">';
+  o+='<div class="st-sec-hd" onclick="tglStSec(\'_top\')">';
+  o+='<span class="st-sec-ic">✦</span>';
+  o+='<span class="st-sec-ttl">ทำสม่ำเสมอ</span>';
+  o+='<span class="st-sec-ct">'+top.length+' อันดับแรก</span>';
+  o+='<span class="st-sec-arr">⌄</span>';
+  o+='</div>';
+  o+='<div class="st-sec-bd">';
+  o+='<div class="ip-list">';
+  top.forEach(function(x){o+=renderIpItem(x,x.pct>=0.7?"hi":(x.pct>=0.4?"mid":""))});
+  o+='</div>';
+  o+='</div></div>';
+
+  // LOW section (only if exists)
+  if(low.length){
+    var lowOpen=D.statSegOpen["_low"]!==false;
+    o+='<div class="st-sec'+(lowOpen?" open":"")+'" data-statkey="_low">';
+    o+='<div class="st-sec-hd" onclick="tglStSec(\'_low\')">';
+    o+='<span class="st-sec-ic">◌</span>';
+    o+='<span class="st-sec-ttl">ต้องให้ความสนใจ</span>';
+    o+='<span class="st-sec-ct">'+low.length+' รายการ</span>';
+    o+='<span class="st-sec-arr">⌄</span>';
+    o+='</div>';
+    o+='<div class="st-sec-bd">';
+    o+='<div class="ip-list">';
+    low.forEach(function(x){o+=renderIpItem(x,x.pct<0.25?"low":"mid")});
+    o+='</div>';
+    o+='</div></div>';
+  }
+
+  // ALL ITEMS by segment (collapsible)
+  var allOpen=D.statSegOpen["_all"]===true;
+  o+='<div class="st-sec'+(allOpen?" open":"")+'" data-statkey="_all">';
+  o+='<div class="st-sec-hd" onclick="tglStSec(\'_all\')">';
+  o+='<span class="st-sec-ic">◇</span>';
+  o+='<span class="st-sec-ttl">ทุกรายการตามช่วง</span>';
+  o+='<span class="st-sec-ct">'+allItems.length+' รายการ</span>';
+  o+='<span class="st-sec-arr">⌄</span>';
+  o+='</div>';
+  o+='<div class="st-sec-bd">';
+  grouped.forEach(function(g){
+    o+='<div style="margin-bottom:12px">';
+    o+='<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid var(--line)">';
+    o+='<span style="font-family:var(--fa);color:'+segAc(g.sg)+';font-size:13px">'+g.sg.sym+'</span>';
+    o+='<span style="font-family:var(--fa);color:'+segAc(g.sg)+';font-size:13px;font-weight:600">'+g.sg.lb+'</span>';
+    o+='<span style="font-size:10px;color:var(--tx2);letter-spacing:.3px">'+esc(g.sg.th)+'</span>';
+    o+='<span style="font-family:var(--fd);font-size:9px;color:var(--tx3);letter-spacing:.5px;margin-left:auto;font-weight:500">'+g.items.length+' items</span>';
+    o+='</div>';
+    o+='<div class="ip-list">';
+    g.items.forEach(function(x){
+      var cls=x.pct>=0.7?"hi":(x.pct<0.25?"low":(x.pct<0.5?"mid":""));
+      o+=renderIpItem(x,cls);
+    });
+    o+='</div>';
+    o+='</div>';
+  });
+  o+='</div></div>';
+  return o;
+}
+
+function renderIpItem(x,extraCls){
+  extraCls=extraCls||"";
+  var itemKey=x.type+"_"+x.sg.id+"_"+x.idx;
+  var open=D.statItemDrill===itemKey;
+  var o='<div class="ip-item '+extraCls+(open?" on":"")+'" onclick="tglDrill(\''+itemKey+'\')">';
+  var label=x.isDua?"ดุอาอ์ · "+((x.it.mn||x.it.tl||"").slice(0,22)):x.it.t;
+  o+='<div class="ip-tx"><span class="ip-seg">'+x.sg.sym+'</span>'+esc(label)+'</div>';
+  o+='<div class="ip-stat"><span class="ip-days"><b>'+x.hit+'</b>/'+x.cap+'</span></div>';
+  o+='</div>';
+  if(open)o+=renderItemHistory(x);
+  return o;
+}
+
+function renderItemHistory(x){
+  var o='<div class="ip-hist">';
+  o+='<div class="ip-hist-hd">';
+  o+='<span class="ip-hist-lb">ย้อนหลัง 30 วัน · '+esc(x.sg.th)+'</span>';
+  o+='<span class="ip-hist-v">'+x.hit+"/"+x.cap+' วัน</span>';
+  o+='</div>';
+  o+='<div class="ip-hist-grid">';
+  for(var i=29;i>=0;i--){
+    var dk=dateKeyOffset(-i);
+    var hit=!!D.todayDone[dk+"_"+x.type+"_"+x.sg.id+"_"+x.idx];
+    var cls="ip-hist-cell"+(hit?" hit":"")+(i===0?" today":"");
+    var parts=dk.split("-");
+    var title=parts[2]+"/"+parts[1]+(hit?" ✓":" —");
+    o+='<div class="'+cls+'" title="'+title+'"></div>';
+  }
+  o+='</div>';
+  o+='<div class="ip-hist-foot">';
+  o+='<span>← เก่า</span>';
+  o+='<span>ทำ: <b style="color:var(--matcha-deep);font-size:10px">'+x.hit+'</b> · ข้าม: <b style="color:var(--tx2);font-size:10px">'+(x.cap-x.hit)+'</b></span>';
+  o+='<span>ใหม่ →</span>';
+  o+='</div>';
+  o+='</div>';
+  return o;
+}
+
+// ═════════════════ PAGE: SETTINGS ═════════════════
+function renderSettings(){
+  var o=pageHdr("الإِعْدَادَات","SETTINGS · ตั้งค่าทั่วไป");
+
+  // Theme section
+  o+=settingsSec("theme","✴","المَظْهَر","ธีมสี",function(){
+    var oo='<div class="th-row">';
+    [["auto","✴","อัตโนมัติ"],["light","☀","กลางวัน"],["dark","☾","กลางคืน"]].forEach(function(t){
+      oo+='<button class="th-opt'+(D.theme===t[0]?" on":"")+'" onclick="D.theme=\''+t[0]+'\';sv();render()"><span class="th-ic">'+t[1]+'</span><span>'+esc(t[2])+'</span></button>';
+    });
+    oo+='</div>';
+    return oo;
+  });
+
+  // Hijri adjustment section
+  o+=settingsSec("hijri","☾","الهِجْرِيّ","ปรับวันฮิจเราะฮ์",function(){
+    var oo='<div class="hj-adj">';
+    oo+='<div class="hj-adj-disp">';
+    oo+='<span class="hj-calc-lbl">API</span>';
+    if(D.hj){
+      oo+='<span class="hj-calc-val">'+parseInt(D.hj.day)+' '+esc(D.hj.month.ar)+' '+esc(D.hj.year)+'هـ</span>';
+    } else {
+      oo+='<span class="hj-calc-val">— ยังไม่โหลด —</span>';
+    }
+    oo+='</div>';
+    oo+='<div class="hj-adj-ctrl">';
+    oo+='<span class="hj-adj-lbl">ปรับวัน (จากการเห็นเดือน)</span>';
+    oo+='<button class="hj-adj-btn" onclick="adjHj(-1)">−</button>';
+    var offV=D.hjOffset||0;
+    oo+='<span class="hj-adj-val'+(offV!==0?" active":"")+'">'+(offV>0?"+"+offV:offV)+'</span>';
+    oo+='<button class="hj-adj-btn" onclick="adjHj(1)">+</button>';
+    oo+='</div>';
+    if(D.hj){
+      var hdE=hijriToday();
+      oo+='<div class="hj-adj-disp" style="border-color:var(--gold-line);background:var(--gold-ghost)">';
+      oo+='<span class="hj-calc-lbl" style="color:var(--gold)">ใช้งานจริง</span>';
+      oo+='<span class="hj-calc-val">'+hdE+' '+esc(D.hj.month.ar)+' '+esc(D.hj.year)+'هـ</span>';
+      oo+='</div>';
+    }
+    if(offV!==0)oo+='<button class="hj-adj-reset" onclick="D.hjOffset=0;sv();render()">รีเซ็ตกลับเป็นค่าคำนวณ</button>';
+    oo+='<div class="hj-note">วันที่ฮิจเราะฮ์จาก API เป็นค่าคำนวณ เดือนจริงยึดตามการเห็นดวงจันทร์ในพื้นที่นั้นๆ หากเดือนจริงต่างจากที่คำนวณ ปรับได้ที่นี่เพื่อให้วันสีขาว (13-14-15) ถูกต้องตามการเห็นเดือน</div>';
+    oo+='</div>';
+    return oo;
+  });
+
+  // Sub-activities section
+  o+=settingsSec("subs","◐","أَنْشِطَة فَرْعِيَّة","กิจกรรมย่อยประจำช่วง",function(){
+    var oo='';
+    SEG.forEach(function(sg){
+      var subs=D.segSubs[sg.id]||[];
+      var addingNew=D.subFormOpen===sg.id;
+      oo+='<div class="sub-seg">';
+      oo+='<div class="sub-seg-hd">';
+      oo+='<span class="sub-seg-sym">'+sg.sym+'</span>';
+      oo+='<span class="sub-seg-n">'+esc(sg.th)+'</span>';
+      oo+='<span class="sub-seg-ct">'+subs.length+' items</span>';
+      oo+='</div>';
+      if(subs.length===0)oo+='<div class="sub-empty-s">— ยังไม่มีกิจกรรมย่อย —</div>';
+      else{
+        oo+='<div class="sub-list">';
+        subs.forEach(function(sb){
+          var editingThis=D.subEditKey===sg.id+"_"+sb.id;
+          if(editingThis){
+            oo+='<div class="sub-add-row" style="width:100%;margin-bottom:5px">';
+            oo+='<input type="text" class="ic-in" placeholder="✦" maxlength="2" value="'+esc(D.subEditIc)+'" oninput="D.subEditIc=this.value">';
+            oo+='<input type="text" class="n-in" placeholder="ชื่อ..." value="'+esc(D.subEditN)+'" oninput="D.subEditN=this.value">';
+            oo+='<button class="sub-add-btn cancel" onclick="D.subEditKey=null;render()">×</button>';
+            oo+='<button class="sub-add-btn save" onclick="saveSubEdit(\''+sg.id+'\',\''+sb.id+'\')">✓</button>';
+            oo+='</div>';
+          } else {
+            oo+='<div class="sub-chip" onclick="startSubEdit(\''+sg.id+'\',\''+sb.id+'\')">';
+            oo+='<span class="sub-chip-ic">'+esc(sb.ic)+'</span>'+esc(sb.n);
+            oo+='<button class="sub-chip-x" onclick="event.stopPropagation();delSub(\''+sg.id+'\',\''+sb.id+'\')">×</button>';
+            oo+='</div>';
+          }
+        });
+        oo+='</div>';
+      }
+      if(addingNew){
+        oo+='<div class="sub-add-row">';
+        oo+='<input type="text" class="ic-in" placeholder="✦" maxlength="2" value="'+esc(D.subFormIc)+'" oninput="D.subFormIc=this.value">';
+        oo+='<input type="text" class="n-in" placeholder="ชื่อกิจกรรมย่อย..." value="'+esc(D.subFormN)+'" oninput="D.subFormN=this.value" autofocus>';
+        oo+='<button class="sub-add-btn cancel" onclick="D.subFormOpen=null;render()">×</button>';
+        oo+='<button class="sub-add-btn save" onclick="saveSubNew(\''+sg.id+'\')">+</button>';
+        oo+='</div>';
+      } else {
+        oo+='<button class="sub-add-trig" onclick="D.subFormOpen=\''+sg.id+'\';D.subFormIc=\'✦\';D.subFormN=\'\';render()">+ เพิ่มกิจกรรมย่อย</button>';
+      }
+      oo+='</div>';
+    });
+    return oo;
+  });
+
+  // Data section
+  o+=settingsSec("data","⌘","البَيَانَات","จัดการข้อมูล",function(){
+    var oo='<div class="dt-row">';
+    oo+='<button class="dt-btn" onclick="doExport()"><span class="dt-ic">↑</span><span>ส่งออก</span></button>';
+    oo+='<button class="dt-btn" onclick="document.getElementById(\'fi\').click()"><span class="dt-ic">↓</span><span>นำเข้า</span></button>';
+    oo+='<button class="dt-btn" onclick="doReset()"><span class="dt-ic">⌫</span><span>ล้างทั้งหมด</span></button>';
+    oo+='</div>';
+    oo+='<div class="dt-row" style="margin-top:6px">';
+    oo+='<button class="dt-btn" onclick="clearSystemDefaults()"><span class="dt-ic">◌</span><span>ลบรายการระบบ</span></button>';
+    oo+='<button class="dt-btn" onclick="restoreSystemDefaults()"><span class="dt-ic">↻</span><span>คืนรายการระบบ</span></button>';
+    oo+='</div>';
+    oo+='<div class="dt-info" style="margin-top:8px;font-size:10px">'+esc("ลบรายการระบบ = เก็บเฉพาะที่เพิ่มเอง (เผื่อต้องการจัดใหม่หมด) · คืนรายการระบบ = เพิ่มรายการเริ่มต้นกลับมา")+'</div>';
+    return oo;
+  });
+
+  // About section
+  o+=settingsSec("about","ⓘ","حَوْل","เกี่ยวกับ",function(){
+    var cnt=0,dcnt=0;SEG.forEach(function(s){cnt+=(D.suns[s.id]||[]).length;dcnt+=(D.duas[s.id]||[]).length});
+    var daysTracked=Object.keys(D.dayTotals).length;
+    var noteDays=Object.keys(D.notes||{}).filter(function(k){return D.notes[k]}).length;
+    var oo='<div class="dt-info">';
+    oo+='<b>Sunnah Life Clock</b> · v20<br><br>';
+    oo+='· ซุนนะฮ์: '+cnt+' รายการ<br>';
+    oo+='· ดุอาอ์: '+dcnt+' รายการ<br>';
+    oo+='· กิจกรรม: '+D.activities.length+' รายการ<br>';
+    oo+='· วันที่บันทึก: '+daysTracked+' วัน<br>';
+    oo+='· โน้ต: '+noteDays+' วัน<br><br>';
+    oo+='7 ช่วงเวลาตามเวลาละหมาด · เวลาจาก Aladhan (Bangkok) · ปฏิทิน Hijri+Gregorian · บันทึกใน localStorage';
+    oo+='</div>';
+    return oo;
+  });
+  return o;
+}
+
+function settingsSec(key,ic,ar,th,bdFn){
+  var open=D.settingsOpen[key];
+  var o='<div class="settings-sec'+(open?" open":"")+'" data-setkey="'+key+'">';
+  o+='<div class="settings-sec-hd" onclick="tglSet(\''+key+'\')">';
+  o+='<span class="settings-sec-ic">'+ic+'</span>';
+  o+='<div class="settings-sec-ttl"><div class="settings-sec-ar">'+ar+'</div><div class="settings-sec-th">'+esc(th)+'</div></div>';
+  o+='<span class="settings-sec-arrow">⌄</span>';
+  o+='</div>';
+  o+='<div class="settings-sec-body">'+bdFn()+'</div>';
+  o+='</div>';
+  return o;
+}
+
+// ═════════════════ ACTIONS ═════════════════
+function goView(v){
+  D.view=v;
+  D.statSelDate=null;D.noteDraft="";
+  D.actEditId=null;D.qaT="";D.qaTl="";D.qaMn="";D.qaSub="";D.qaSeg=null;
+  D.addSheetOpen=false;D.addSheetMode=null;
+  D.fabOpen=false;
+  window.scrollTo(0,0);
+  render();
+}
+function goHijriSettings(){
+  D.view="settings";
+  D.settingsOpen.hijri=true;
+  D.settingsOpen.theme=false;
+  window.scrollTo(0,0);
+  render();
+}
+function tglSet(key){
+  D.settingsOpen[key]=!D.settingsOpen[key];
+  var el=document.querySelector('[data-setkey="'+key+'"]');
+  if(el)el.classList.toggle('open',D.settingsOpen[key]);
+}
+function tglStSec(key){
+  D.statSegOpen[key]=!D.statSegOpen[key];
+  var el=document.querySelector('[data-statkey="'+key+'"]');
+  if(el)el.classList.toggle('open',D.statSegOpen[key]);
+}
+function cycleTh(){var ord=["auto","light","dark"],i=ord.indexOf(D.theme);D.theme=ord[(i+1)%3];sv();render()}
+function selSeg(id){
+  if(D.act===id){D.act=null;D.sub=null}
+  else{D.act=id;D.sub=null}
+  D.menuOpen=null;D.editOpen=null;
+  render();
+}
+function setTab(t){D.tab=t;D.sub=null;D.menuOpen=null;D.editOpen=null;sv();render()}
+function tglFab(){D.fabOpen=!D.fabOpen;render()}
+
+function navDua(segId,dir){
+  var total=(D.duas[segId]||[]).length;if(!total)return;
+  var cur=D.duaIdx[segId]||0;
+  cur=(cur+dir+total)%total;
+  D.duaIdx[segId]=cur;
+  D.menuOpen=null;D.editOpen=null;
+  sv();render();
+}
+function setDuaIdx(segId,idx){D.duaIdx[segId]=idx;D.menuOpen=null;D.editOpen=null;sv();render()}
+
+function tglMenu(key){
+  if(D.menuOpen===key){D.menuOpen=null}
+  else{D.menuOpen=key;D.editOpen=null}
+  render();
+}
+function startEdit(type,segId,idx){
+  var key=type+"_"+segId+"_"+idx;
+  if(type==="sun"){
+    var it=D.suns[segId][idx];
+    D.editT=it.t||"";D.editH=it.h||"";D.editSub=it.sub||"";
+  } else {
+    var du=D.duas[segId][idx];
+    D.editAr=du.ar||"";D.editTl=du.tl||"";D.editMn=du.mn||"";
+  }
+  D.editOpen=key;D.menuOpen=null;
+  render();
+}
+function cancelEdit(){D.editOpen=null;render()}
+function saveEdit(type,segId,idx){
+  if(type==="sun"){
+    var v=(D.editT||"").trim();if(!v)return;
+    D.suns[segId][idx].t=v;
+    D.suns[segId][idx].h=(D.editH||"").trim();
+    D.suns[segId][idx].sub=D.editSub||null;
+  } else {
+    var vv=(D.editAr||"").trim();if(!vv)return;
+    D.duas[segId][idx].ar=vv;
+    D.duas[segId][idx].tl=(D.editTl||"").trim();
+    D.duas[segId][idx].mn=(D.editMn||"").trim();
+  }
+  D.editOpen=null;sv();render();
+}
+function rmSun(segId,i){
+  if(!confirm("ลบ \""+D.suns[segId][i].t+"\"?"))return;
+  D.suns[segId].splice(i,1);
+  D.menuOpen=null;sv();render();
+}
+function rmDua(segId,i){
+  if(!confirm("ลบดุอาอ์บทนี้?"))return;
+  D.duas[segId].splice(i,1);
+  if(D.duaIdx[segId]>=D.duas[segId].length)D.duaIdx[segId]=Math.max(0,D.duas[segId].length-1);
+  D.menuOpen=null;sv();render();
+}
+
+// Add sheet (inline on home)
+function openAdd(mode){
+  D.fabOpen=false;
+  D.addSheetMode=mode;
+  D.addSheetOpen=true;
+  D.qaT="";D.qaTl="";D.qaMn="";D.qaSub="";
+  D.qaSeg=D.act||curSeg().id;
+  if(mode==="activity"){
+    D.actN="";D.actS="";D.actE="";D.actC="#5b9078";
+  }
+  // Ensure we're on home
+  if(D.view!=="home")D.view="home";
+  window.scrollTo(0,0);
+  render();
+  // Scroll to add sheet after render
+  setTimeout(function(){
+    var sheet=document.querySelector(".add-sheet");
+    if(sheet)sheet.scrollIntoView({behavior:"smooth",block:"center"});
+  },80);
+}
+function closeAddSheet(){
+  D.addSheetOpen=false;D.addSheetMode=null;
+  render();
+}
+function addSunnahFromFab(){
+  var v=(D.qaT||"").trim();if(!v){alert("กรุณาใส่ชื่อซุนนะฮ์");return}
+  var segId=D.qaSeg||curSeg().id;
+  if(!D.suns[segId])D.suns[segId]=[];
+  D.suns[segId].push({t:v,h:(D.qaTl||"").trim(),sub:D.qaSub||null});
+  closeAddSheet();sv();render();
+}
+function addDuaFromFab(){
+  var v=(D.qaT||"").trim();if(!v){alert("กรุณาใส่ข้อความอาหรับ");return}
+  var segId=D.qaSeg||curSeg().id;
+  if(!D.duas[segId])D.duas[segId]=[];
+  D.duas[segId].push({ar:v,tl:(D.qaTl||"").trim(),mn:(D.qaMn||"").trim(),sub:null});
+  closeAddSheet();sv();render();
+}
+function addActFromFab(){
+  if(!(D.actN||"").trim()||!D.actS||!D.actE){alert("กรุณาใส่ข้อมูลให้ครบ");return}
+  D.activities.push({n:D.actN.trim(),s:D.actS,e:D.actE,c:D.actC});
+  D.actN="";D.actS="";D.actE="";
+  closeAddSheet();sv();render();
+}
+
+// Sub activity (inline in settings)
+function saveSubNew(segId){
+  var n=(D.subFormN||"").trim();if(!n){alert("กรุณาใส่ชื่อ");return}
+  var ic=(D.subFormIc||"✦").trim()||"✦";
+  var newId="sub_"+Date.now();
+  if(!D.segSubs[segId])D.segSubs[segId]=[];
+  D.segSubs[segId].push({id:newId,n:n,ic:ic});
+  D.subFormOpen=null;D.subFormN="";D.subFormIc="✦";
+  sv();render();
+}
+function startSubEdit(segId,subId){
+  var sb=(D.segSubs[segId]||[]).find(function(s){return s.id===subId});
+  if(!sb)return;
+  D.subEditKey=segId+"_"+subId;
+  D.subEditIc=sb.ic;D.subEditN=sb.n;
+  render();
+}
+function saveSubEdit(segId,subId){
+  var n=(D.subEditN||"").trim();if(!n)return;
+  var ic=(D.subEditIc||"").trim()||"✦";
+  var sb=(D.segSubs[segId]||[]).find(function(s){return s.id===subId});
+  if(sb){sb.n=n;sb.ic=ic}
+  D.subEditKey=null;
+  sv();render();
+}
+function delSub(segId,subId){
+  if(!confirm("ลบกิจกรรมย่อยนี้? (รายการที่ผูกไว้จะไม่ถูกลบ)"))return;
+  D.segSubs[segId]=(D.segSubs[segId]||[]).filter(function(s){return s.id!==subId});
+  (D.suns[segId]||[]).forEach(function(it){if(it.sub===subId)it.sub=null});
+  (D.duas[segId]||[]).forEach(function(it){if(it.sub===subId)it.sub=null});
+  if(D.sub===subId)D.sub=null;
+  sv();render();
+}
+
+// Activity edit
+function startActEdit(i){
+  var a=D.activities[i];
+  D.actEditId=i;D.actEditN=a.n;D.actEditS=a.s;D.actEditE=a.e;D.actEditC=a.c;
+  render();
+}
+function saveActEdit(i){
+  if(!(D.actEditN||"").trim()||!D.actEditS||!D.actEditE)return;
+  D.activities[i]={n:D.actEditN.trim(),s:D.actEditS,e:D.actEditE,c:D.actEditC};
+  D.actEditId=null;sv();render();
+}
+function rmAct(i){
+  if(!confirm("ลบกิจกรรม \""+D.activities[i].n+"\"?"))return;
+  D.activities.splice(i,1);sv();render();
+}
+
+// Hijri adjustment
+function adjHj(delta){
+  D.hjOffset=(D.hjOffset||0)+delta;
+  // Limit to -5..+5 for safety
+  if(D.hjOffset>5)D.hjOffset=5;
+  if(D.hjOffset<-5)D.hjOffset=-5;
+  sv();render();
+}
+
+// Stats nav
+function setPeriod(p){D.statPeriod=p;D.statSelDate=null;render()}
+function navMonth(dir){D.statMonthOff+=dir;D.statSelDate=null;render()}
+function navYear(dir){D.statYearOff+=dir;render()}
+function selCalDate(dk){
+  D.statSelDate=D.statSelDate===dk?null:dk;
+  D.noteDraft=D.notes[dk]||"";
+  render();
+}
+function openDayDetail(dk){
+  D.statSelDate=dk;
+  D.noteDraft=D.notes[dk]||"";
+  render();
+}
+function selMonth(m,y){
+  var now=new Date();
+  D.statPeriod="month";
+  D.statMonthOff=(y-now.getFullYear())*12+(m-now.getMonth());
+  render();
+}
+function saveNote(dk){
+  if(!D.notes)D.notes={};
+  var v=(D.noteDraft||"").trim();
+  if(v)D.notes[dk]=v;
+  else delete D.notes[dk];
+  sv();
+  D.noteSaved=dk;
+  render();
+  setTimeout(function(){if(D.noteSaved===dk){D.noteSaved=null;render()}},1800);
+}
+function tglDrill(key){D.statItemDrill=D.statItemDrill===key?null:key;render()}
+
+// Swipe gesture
+var _sw={sx:0,sy:0,t:0,active:false};
+function _swStart(e){
+  if(!e.touches||!e.touches[0])return;
+  _sw.sx=e.touches[0].clientX;_sw.sy=e.touches[0].clientY;
+  _sw.t=Date.now();_sw.active=true;
+}
+function _swMove(e){if(!_sw.active||!e.touches||!e.touches[0])return}
+function _swEnd(e,dk){
+  if(!_sw.active)return;
+  _sw.active=false;
+  if(!e.changedTouches||!e.changedTouches[0])return;
+  var dx=e.changedTouches[0].clientX-_sw.sx;
+  var dy=e.changedTouches[0].clientY-_sw.sy;
+  var dt=Date.now()-_sw.t;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5&&dt<500){
+    navDetailDay(dk,dx>0?-1:1);
+  }
+}
+function navDetailDay(curDk,dir){
+  var parts=curDk.split("-");
+  var d=new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
+  d.setDate(d.getDate()+dir);
+  var today=new Date();today.setHours(0,0,0,0);
+  if(d>today)return;
+  var newDk=dateKey(d);
+  D.statSelDate=newDk;
+  D.noteDraft=D.notes[newDk]||"";
+  if(D.statPeriod==="month"){
+    var now=new Date();
+    D.statMonthOff=(d.getFullYear()-now.getFullYear())*12+(d.getMonth()-now.getMonth());
+  }
+  render();
+}
+
+function doReset(){
+  if(confirm("ล้างข้อมูลทั้งหมด?\n\n• ซุนนะฮ์ · ดุอาอ์ · กิจกรรม · โน้ต · สถิติ — ทุกรายการจะถูกลบจนเหลือ 0\n• การกระทำนี้กลับไม่ได้")){
+    // Hard-clear — every collection becomes empty, defaults will NOT repopulate
+    SEG.forEach(function(s){
+      D.suns[s.id]=[];
+      D.duas[s.id]=[];
+      D.segSubs[s.id]=[];
+      D.duaIdx[s.id]=0;
+    });
+    D.todayDone={};
+    D.dayTotals={};
+    D.notes={};
+    D.activities=[];
+    D.hRef={};
+    D.hjOffset=0;
+    D.act=null;D.sub=null;D.tab="sunnah";
+    D.menuOpen=null;D.editOpen=null;
+    D.statSelDate=null;D.statItemDrill=null;D.statFilterSeg=null;
+    D.addSheetOpen=false;D.addSheetMode=null;D.fabOpen=false;
+    // Clear old version keys too, then save fresh empty state
+    ["sc18","sc16","sc15","sc14"].forEach(function(k){localStorage.removeItem(k)});
+    sv();
+    render();
+    setTimeout(function(){alert("ล้างเรียบร้อย · เริ่มต้นจาก 0 ✓")},50);
+  }
+}
+function clearSystemDefaults(){
+  var sysSun=0,sysDua=0;
+  SEG.forEach(function(sg){
+    (D.suns[sg.id]||[]).forEach(function(it){if(it.sys)sysSun++});
+    (D.duas[sg.id]||[]).forEach(function(it){if(it.sys)sysDua++});
+  });
+  if(sysSun+sysDua===0){alert("ไม่มีรายการระบบให้ลบ");return}
+  if(!confirm("ลบรายการของระบบทั้งหมด? ("+sysSun+" ซุนนะฮ์ + "+sysDua+" ดุอาอ์)\nรายการที่คุณเพิ่มเองจะเก็บไว้"))return;
+  // Must rebuild todayDone indexes since we're splicing arrays
+  var newTodayDone={};
+  SEG.forEach(function(sg){
+    var oldSuns=D.suns[sg.id]||[];
+    var newSuns=[];var sunMap={};
+    oldSuns.forEach(function(it,oldIdx){if(!it.sys){sunMap[oldIdx]=newSuns.length;newSuns.push(it)}});
+    var oldDuas=D.duas[sg.id]||[];
+    var newDuas=[];var duaMap={};
+    oldDuas.forEach(function(it,oldIdx){if(!it.sys){duaMap[oldIdx]=newDuas.length;newDuas.push(it)}});
+    D.suns[sg.id]=newSuns;
+    D.duas[sg.id]=newDuas;
+    if(D.duaIdx[sg.id]>=newDuas.length)D.duaIdx[sg.id]=0;
+    // Remap todayDone keys for this seg
+    Object.keys(D.todayDone).forEach(function(k){
+      var mm=k.match(/^(\d{4}-\d{2}-\d{2})_(sun|dua)_([^_]+)_(\d+)$/);
+      if(!mm)return;
+      if(mm[3]!==sg.id){newTodayDone[k]=D.todayDone[k];return}
+      var oldI=parseInt(mm[4]);
+      var newI=mm[2]==="sun"?sunMap[oldI]:duaMap[oldI];
+      if(newI!==undefined)newTodayDone[mm[1]+"_"+mm[2]+"_"+mm[3]+"_"+newI]=D.todayDone[k];
+    });
+  });
+  // Keep non-matching keys (shouldn't be any but safe)
+  Object.keys(D.todayDone).forEach(function(k){
+    var mm=k.match(/^(\d{4}-\d{2}-\d{2})_(sun|dua)_([^_]+)_(\d+)$/);
+    if(!mm&&D.todayDone[k])newTodayDone[k]=D.todayDone[k];
+  });
+  D.todayDone=newTodayDone;
+  sv();render();
+  alert("ลบรายการระบบเรียบร้อย ✓");
+}
+function restoreSystemDefaults(){
+  var added=0;
+  SEG.forEach(function(sg){
+    if(!D.suns[sg.id])D.suns[sg.id]=[];
+    if(!D.duas[sg.id])D.duas[sg.id]=[];
+    // Check which system defaults are already in the list
+    (sg.sun||[]).forEach(function(def){
+      var exists=D.suns[sg.id].some(function(it){return it.sys&&it.t===def.t});
+      if(!exists){D.suns[sg.id].push({t:def.t,h:def.h,sub:null,sys:true});added++}
+    });
+    (sg.dua||[]).forEach(function(def){
+      var exists=D.duas[sg.id].some(function(it){return it.sys&&it.ar===def.ar});
+      if(!exists){D.duas[sg.id].push({ar:def.ar,tl:def.tl,mn:def.mn,sub:null,sys:true});added++}
+    });
+  });
+  sv();render();
+  if(added===0)alert("รายการระบบครบถ้วนอยู่แล้ว ✓");
+  else alert("คืนรายการระบบ "+added+" รายการ ✓");
+}
+function doExport(){
+  var d={suns:D.suns,duas:D.duas,segSubs:D.segSubs,todayDone:D.todayDone,dayTotals:D.dayTotals,duaIdx:D.duaIdx,notes:D.notes,activities:D.activities,theme:D.theme,hjOffset:D.hjOffset,v:20};
+  var b=new Blob([JSON.stringify(d,null,2)],{type:"application/json"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(b);
+  a.download="sunnah_v20_"+dateKey()+".json";
+  a.click();
+}
+function doImport(e){
+  var f=e.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(ev){
+    try{
+      var d=JSON.parse(ev.target.result);
+      ["suns","duas","segSubs","todayDone","dayTotals","duaIdx","notes","activities","theme","hjOffset"].forEach(function(k){
+        if(d[k]!==undefined)D[k]=d[k];
+      });
+      sv();render();
+      alert("นำเข้าสำเร็จ ✓");
+    }catch(err){alert("ไฟล์ไม่ถูกต้อง")}
+  };
+  r.readAsText(f);
+  e.target.value="";
+}
+
+function fetchPT(){
+  var d=new Date();
+  fetch("https://api.aladhan.com/v1/timingsByCity/"+d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+"?city=Bangkok&country=Thailand&method=3")
+    .then(function(r){return r.json()})
+    .then(function(j){
+      if(j.code===200){
+        D.pt=j.data.timings;D.hj=j.data.date.hijri;D.gd=j.data.date.gregorian.date;
+        applyTh();render();
+      }
+    })
+    .catch(function(){
+      D.pt={Fajr:"05:15",Sunrise:"06:18",Dhuhr:"12:15",Asr:"15:30",Maghrib:"18:25",Isha:"19:38"};
+      applyTh();render();
+    });
+}
+
+if(!D.dayTotals[dateKey()])D.dayTotals[dateKey()]=computeTotals();
+fetchPT();render();
+setInterval(function(){
+  // Skip re-render if there's active form/edit to preserve input
+  if(D.editOpen||D.actEditId!==null||D.addSheetOpen||D.subFormOpen||D.subEditKey)return;
+  var active=document.activeElement;
+  if(active&&(active.tagName==="INPUT"||active.tagName==="TEXTAREA"||active.tagName==="SELECT"))return;
+  applyTh();render();
+},60000);
+</script>
+</body>
+</html>
